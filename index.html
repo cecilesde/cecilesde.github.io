@@ -145,29 +145,17 @@
 
     /* ── EDUCATION LOGO ROW ── */
     .tl-org-row {
-      display: flex; align-items: center; gap: 0.75rem;
-      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 0.8rem;
     }
 
-    .school-logo {
-      width: 32px; height: 32px;
-      border-radius: 4px;
+    .school-logo-img {
+      height: 44px;
+      width: auto;
+      max-width: 120px;
       object-fit: contain;
-      background: white;
-      border: 1px solid var(--line);
-      padding: 2px;
+      display: block;
       flex-shrink: 0;
-    }
-
-    /* SVG logos inline */
-    .school-logo-svg {
-      width: 32px; height: 32px;
-      border-radius: 4px;
-      background: white;
-      border: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      overflow: hidden;
     }
 
     .tl-org {
@@ -198,24 +186,65 @@
     .tag-v { background: var(--violet-lt);  color: var(--violet); border-color: rgba(67,56,202,0.2); }
 
     /* ── SKILLS ── */
-    .skills-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1px; background: var(--line);
-      border: 1px solid var(--line);
+    .skills-layout { display: flex; flex-direction: column; gap: 3rem; }
+
+    .skills-row-label {
+      font-family: 'DM Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-3); margin-bottom: 1.6rem;
+      display: flex; align-items: center; gap: 1rem;
     }
-    .skill-block { background: var(--bg); padding: 2.2rem 2.4rem; }
-    .skill-cat {
-      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
-      color: var(--ink); margin-bottom: 1.2rem;
-      display: flex; align-items: center; gap: 0.65rem;
+    .skills-row-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+
+    /* Technical skills — horizontal strip */
+    .tech-strip { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .tech-row { display: flex; align-items: baseline; gap: 1.5rem; flex-wrap: wrap; }
+
+    .tech-row-label {
+      font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500;
+      color: var(--ink); min-width: 130px; flex-shrink: 0;
     }
-    .skill-cat::before {
-      content: ''; width: 3px; height: 16px; display: inline-block; flex-shrink: 0;
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    /* Beyond section — horizontal cards */
+    .beyond-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+    .beyond-card {
+      border: 1px solid var(--line); padding: 1.6rem 1.8rem;
+      background: white;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .skill-block:nth-child(1) .skill-cat::before { background: var(--teal); }
-    .skill-block:nth-child(2) .skill-cat::before { background: var(--violet); }
-    .skill-block:nth-child(3) .skill-cat::before { background: var(--ink-3); }
-    .skill-block:nth-child(4) .skill-cat::before { background: #C8A96A; }
+    .beyond-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+
+    .beyond-icon {
+      font-size: 1.4rem; margin-bottom: 0.8rem; display: block;
+    }
+
+    .beyond-title {
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 0.4rem;
+    }
+
+    .beyond-desc {
+      font-size: 0.88rem; color: var(--ink-2); line-height: 1.6;
+    }
+
+    .beyond-desc .hi { color: var(--teal); font-weight: 500; }
+
+    /* Language flags row */
+    .lang-row { display: flex; gap: 1.2rem; flex-wrap: wrap; margin-top: 1.4rem; }
+
+    .lang-item {
+      display: flex; align-items: center; gap: 0.6rem;
+      border: 1px solid var(--line); padding: 0.5rem 1rem;
+      background: white;
+    }
+    .lang-flag { font-size: 1.1rem; }
+    .lang-name { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+    .lang-level { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.05em; }
+
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
     /* ── PROJECTS ── */
@@ -355,40 +384,37 @@
   </div>
   <div class="timeline">
 
-  <div class="tl-item">
-    <div>
-      <div class="tl-org-row">
-        <img src="Imperial.png" class="school-logo" alt="Imperial College London">
-        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+    <div class="tl-item">
+      <div>
+        <div class="tl-org-row">
+          <img src="imperial-logo.png" alt="Imperial College London" class="school-logo-img">
+          <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+        </div>
+        <h3 class="tl-title">MSc Biomedical Engineering</h3>
+        <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology · Machine Learning</p>
       </div>
-      
-      <h3 class="tl-title">MSc Biomedical Engineering</h3>
-      <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology · Machine Learning</p>
-    </div>
-    
-    <div class="tl-right">
-      <p class="tl-date">Oct 2025 – Aug 2026</p>
-      <span class="tl-badge edu">MSc</span>
-    </div>
-  </div>
-
-  <div class="tl-item">
-    <div>
-      <div class="tl-org-row">
-        <img src="Centrale.png" class="school-logo" alt="École Centrale de Lyon">
-        <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
+      <div class="tl-right">
+        <p class="tl-date">Oct 2025 – Aug 2026</p>
+        <span class="tl-badge edu">MSc</span>
       </div>
-      
-      <h3 class="tl-title">MEng General Engineering</h3>
-      <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · Computational Fluid Dynamics · Economics</p>
     </div>
-    
-    <div class="tl-right">
-      <p class="tl-date">Sept 2022 – Aug 2026</p>
-      <span class="tl-badge edu">MEng</span>
-    </div>
-  </div>
 
+    <div class="tl-item">
+      <div>
+        <div class="tl-org-row">
+          <img src="ecl-logo.png" alt="École Centrale de Lyon" class="school-logo-img">
+          <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
+        </div>
+        <h3 class="tl-title">MEng General Engineering</h3>
+        <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · Materials Engineering · Computational Fluid Dynamics · Economics · Health Engineering</p>
+      </div>
+      <div class="tl-right">
+        <p class="tl-date">Sept 2022 – Aug 2026</p>
+        <span class="tl-badge edu">MEng</span>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 <!-- EXPERIENCES -->
@@ -445,54 +471,104 @@
     <h2 class="section-title">Skills</h2>
     <div class="section-line"></div>
   </div>
-  <div class="skills-grid fade">
-    <div class="skill-block">
-      <p class="skill-cat">AI &amp; Machine Learning</p>
-      <div class="skill-tags">
-        <span class="tag tag-t">scikit-learn</span>
-        <span class="tag tag-t">XGBoost</span>
-        <span class="tag tag-t">RAG Pipelines</span>
-        <span class="tag tag-t">Agentic AI</span>
-        <span class="tag">LLM Grounding</span>
-        <span class="tag">Learning-to-Rank</span>
-        <span class="tag">Time-Series ML</span>
-        <span class="tag">PCA</span>
+
+  <div class="skills-layout fade">
+
+    <!-- TECHNICAL -->
+    <div>
+      <p class="skills-row-label">Technical</p>
+      <div class="tech-strip">
+
+        <div class="tech-row">
+          <span class="tech-row-label">Programming</span>
+          <div class="tech-tags">
+            <span class="tag tag-t">Python</span>
+            <span class="tag tag-t">MATLAB / Simulink</span>
+            <span class="tag tag-t">OpenCV</span>
+            <span class="tag">NumPy · Pandas</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Git / GitHub</span>
+          </div>
+        </div>
+
+        <div class="tech-row">
+          <span class="tech-row-label">AI &amp; ML</span>
+          <div class="tech-tags">
+            <span class="tag tag-t">Agentic AI</span>
+            <span class="tag tag-t">RAG Pipelines</span>
+            <span class="tag tag-t">XGBoost</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">LLM Grounding</span>
+            <span class="tag">Learning-to-Rank</span>
+            <span class="tag">Time-Series ML</span>
+            <span class="tag">PCA</span>
+          </div>
+        </div>
+
+        <div class="tech-row">
+          <span class="tech-row-label">Biomedical</span>
+          <div class="tech-tags">
+            <span class="tag tag-v">EMG Analysis</span>
+            <span class="tag tag-v">3D Motion Capture</span>
+            <span class="tag tag-v">Force Plate Kinetics</span>
+            <span class="tag tag-v">OpenSim</span>
+            <span class="tag">Signal Processing</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Medical Devices · FDA/MDR</span>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="skill-block">
-      <p class="skill-cat">Biomedical Engineering</p>
-      <div class="skill-tags">
-        <span class="tag tag-v">EMG Analysis</span>
-        <span class="tag tag-v">3D Motion Capture</span>
-        <span class="tag tag-v">Force Plate Kinetics</span>
-        <span class="tag tag-v">OpenSim</span>
-        <span class="tag">Medical Devices</span>
-        <span class="tag">FDA / MDR</span>
-        <span class="tag">Biomechanics</span>
+
+    <!-- LANGUAGES -->
+    <div>
+      <p class="skills-row-label">Languages</p>
+      <div class="lang-row">
+        <div class="lang-item">
+          <span class="lang-flag">🇫🇷</span>
+          <span class="lang-name">French</span>
+          <span class="lang-level">Native</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-name">English</span>
+          <span class="lang-level">C1 · TOEFL 104/120</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-flag">🇯🇵</span>
+          <span class="lang-name">Japanese</span>
+          <span class="lang-level">Rudiments</span>
+        </div>
       </div>
     </div>
-    <div class="skill-block">
-      <p class="skill-cat">Programming</p>
-      <div class="skill-tags">
-        <span class="tag tag-t">Python</span>
-        <span class="tag tag-t">MATLAB</span>
-        <span class="tag">OpenCV</span>
-        <span class="tag">NumPy · Pandas</span>
-        <span class="tag">Git / GitHub</span>
-        <span class="tag">scikit-learn</span>
+
+    <!-- BEYOND ENGINEERING -->
+    <div>
+      <p class="skills-row-label">Beyond Engineering</p>
+      <div class="beyond-grid">
+
+        <div class="beyond-card">
+          <span class="beyond-icon">🥋</span>
+          <p class="beyond-title">Judo — Black Belt</p>
+          <p class="beyond-desc"><span class="hi">18 years</span> of competitive practice, international camp training, assistant coach for children. Discipline, resilience, reading opponents under pressure.</p>
+        </div>
+
+        <div class="beyond-card">
+          <span class="beyond-icon">⚽</span>
+          <p class="beyond-title">Football</p>
+          <p class="beyond-desc">Striker in Centrale Lyon's women's team. Team dynamics, collective performance, and the science of movement — from both sides of the data.</p>
+        </div>
+
+        <div class="beyond-card">
+          <span class="beyond-icon">🎸</span>
+          <p class="beyond-title">Classical Guitar</p>
+          <p class="beyond-desc"><span class="hi">8 years</span> at conservatory level, second cycle with honours. Precision, long-term commitment, and the discipline of deliberate practice.</p>
+        </div>
+
       </div>
     </div>
-    <div class="skill-block">
-      <p class="skill-cat">Data Science</p>
-      <div class="skill-tags">
-        <span class="tag">Signal Processing</span>
-        <span class="tag">Computer Vision</span>
-        <span class="tag">Multimodal Data</span>
-        <span class="tag">Statistical Analysis</span>
-        <span class="tag">Gaussian Fitting</span>
-        <span class="tag">Subpixel Refinement</span>
-      </div>
-    </div>
+
   </div>
 </div>
 
