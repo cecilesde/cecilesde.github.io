@@ -7,7 +7,7 @@
   <title>Cécile Soudé — Biomedical & AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg:        #F5F3EF;
@@ -51,11 +51,11 @@
 
     .nav-logo {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.9rem; /* Augmenté */
       letter-spacing: 0.1em;
-      color: var(--ink-2);
+      color: var(--ink-3);
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     .nav-links {
@@ -66,7 +66,7 @@
 
     .nav-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem; /* Augmenté */
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--ink-3);
@@ -77,13 +77,13 @@
 
     .nav-cta {
       font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
+      font-size: 0.85rem; /* Augmenté */
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--teal);
       text-decoration: none;
       border: 1px solid var(--teal);
-      padding: 0.4rem 1rem;
+      padding: 0.5rem 1.2rem;
       transition: background 0.2s, color 0.2s;
     }
     .nav-cta:hover { background: var(--teal); color: #fff; }
@@ -108,7 +108,7 @@
 
     .hero-eyebrow {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem; /* Augmenté */
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--teal);
@@ -138,14 +138,14 @@
     }
 
     .hero-headline {
-      font-size: 1.1rem;
+      font-size: 1.2rem; /* Augmenté */
       font-weight: 500;
       color: var(--ink-2);
       margin-bottom: 0.4rem;
     }
 
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 1rem; /* Augmenté */
       color: var(--ink-3);
       max-width: 450px;
       line-height: 1.8;
@@ -159,29 +159,36 @@
       align-items: center;
     }
 
-    .btn-primary, .btn-ghost {
+    .btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.5rem;
+      padding: 0.8rem 1.6rem;
+      background: var(--ink);
+      color: var(--bg);
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem; /* Augmenté */
       letter-spacing: 0.06em;
       text-transform: uppercase;
       text-decoration: none;
-      transition: all 0.2s;
-    }
-    
-    .btn-primary {
-      background: var(--ink);
-      color: var(--bg);
+      transition: background 0.2s;
     }
     .btn-primary:hover { background: var(--teal); }
 
     .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.6rem;
       background: transparent;
       color: var(--ink-2);
+      font-family: 'DM Mono', monospace;
+      font-size: 0.85rem; /* Augmenté */
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
       border: 1px solid var(--line);
+      transition: border-color 0.2s, color 0.2s;
     }
     .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
 
@@ -226,7 +233,7 @@
 
     .section-num {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem; /* Augmenté */
       font-weight: 500;
       color: var(--teal);
       letter-spacing: 0.12em;
@@ -234,7 +241,7 @@
 
     .section-title {
       font-family: 'Fraunces', serif;
-      font-size: 1.8rem;
+      font-size: 2rem; /* Fortement augmenté */
       font-weight: 300;
       color: var(--ink);
       letter-spacing: -0.01em;
@@ -248,27 +255,28 @@
 
     /* ── ABOUT ── */
     .about-layout {
-      max-width: 750px; /* Optimized reading width */
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .about-text {
       font-family: 'Fraunces', serif;
-      font-size: 1.2rem;
+      font-size: 1.25rem; /* Augmenté pour une meilleure lisibilité */
       font-weight: 300;
-      line-height: 1.8;
+      line-height: 1.85;
       color: var(--ink-2);
     }
 
     .about-text strong { color: var(--ink); font-weight: 400; }
     .about-text .hi { color: var(--teal); font-style: italic; }
+    .about-text .vi { color: var(--violet); font-style: italic; }
 
     /* ── TIMELINE ── */
     .timeline { display: flex; flex-direction: column; gap: 0; }
 
     .tl-item {
       display: grid;
-      grid-template-columns: 180px 1fr;
+      grid-template-columns: 180px 1fr; /* Élargi pour les dates plus grandes */
       gap: 2.5rem;
       padding: 2.5rem 0;
       border-top: 1px solid var(--line);
@@ -279,12 +287,11 @@
     .tl-item:last-child { border-bottom: 1px solid var(--line); }
     .tl-item.visible { opacity: 1; transform: none; }
 
-    .tl-left { padding-top: 0.2rem; }
+    .tl-left { padding-top: 0.3rem; }
 
     .tl-date {
       font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      font-weight: 400;
+      font-size: 0.95rem; /* Fortement augmenté */
       color: var(--ink-3);
       letter-spacing: 0.06em;
       line-height: 1.6;
@@ -294,11 +301,10 @@
     .tl-badge {
       display: inline-block;
       font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      font-weight: 500;
+      font-size: 0.75rem; /* Augmenté */
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      padding: 0.25rem 0.6rem;
+      padding: 0.3rem 0.6rem;
     }
 
     .tl-badge.work   { background: var(--teal-light); color: var(--teal); }
@@ -307,7 +313,7 @@
 
     .tl-org {
       font-family: 'DM Mono', monospace;
-      font-size: 0.95rem;
+      font-size: 1.1rem; /* Fortement augmenté */
       font-weight: 500;
       color: var(--teal);
       letter-spacing: 0.04em;
@@ -316,7 +322,7 @@
 
     .tl-title {
       font-family: 'Fraunces', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem; /* Augmenté */
       font-weight: 400;
       color: var(--ink);
       margin-bottom: 0.8rem;
@@ -324,11 +330,11 @@
     }
 
     .tl-desc {
-      font-size: 0.95rem;
+      font-size: 1rem; /* Augmenté */
       color: var(--ink-2);
       line-height: 1.75;
       max-width: 600px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -336,8 +342,7 @@
     /* ── TAGS ── */
     .tag {
       font-family: 'DM Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 400;
+      font-size: 0.75rem; /* Augmenté */
       letter-spacing: 0.05em;
       text-transform: uppercase;
       padding: 0.3rem 0.7rem;
@@ -365,7 +370,7 @@
 
     .skill-cat {
       font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
+      font-size: 1rem; /* Fortement augmenté */
       font-weight: 500;
       color: var(--ink-2);
       letter-spacing: 0.1em;
@@ -426,8 +431,7 @@
 
     .proj-num {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
-      font-weight: 500;
+      font-size: 0.85rem; /* Augmenté */
       color: var(--ink-3);
       letter-spacing: 0.1em;
       margin-bottom: 1.2rem;
@@ -435,7 +439,7 @@
 
     .proj-title {
       font-family: 'Fraunces', serif;
-      font-size: 1.25rem;
+      font-size: 1.35rem; /* Augmenté */
       font-weight: 500;
       color: var(--ink);
       line-height: 1.4;
@@ -443,7 +447,7 @@
     }
 
     .proj-desc {
-      font-size: 0.95rem;
+      font-size: 1rem; /* Augmenté */
       color: var(--ink-2);
       line-height: 1.72;
       margin-bottom: 1.5rem;
@@ -464,7 +468,7 @@
 
     .footer-mono {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--ink-3);
       letter-spacing: 0.07em;
       text-transform: uppercase;
@@ -474,7 +478,7 @@
 
     .footer-links a {
       font-family: 'DM Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       letter-spacing: 0.07em;
       text-transform: uppercase;
       color: var(--ink-3);
@@ -504,11 +508,10 @@
       .nav-links, .nav-cta { display: none; }
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
       .profile-frame { width: 180px; height: 215px; }
-      .tl-item { grid-template-columns: 1fr; gap: 0.8rem; padding: 2rem 0; }
+      .tl-item { grid-template-columns: 1fr; gap: 1rem; }
       .tl-left { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.5rem; }
-      .tl-date { margin-bottom: 0; }
       .skills-grid, .projects-grid { grid-template-columns: 1fr; }
-      footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; text-align: center; }
+      footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; }
     }
   </style>
 </head>
@@ -546,7 +549,8 @@
 
     <div class="profile-wrap">
       <div class="profile-frame">
-        <img src="profile.jpg" alt="Cécile Soudé" class="profile-img" onerror="this.style.display='none'">
+        <img src="profile.jpg" alt="Cécile Soudé" class="profile-img"
+          onerror="this.style.display='none'">
       </div>
     </div>
   </div>
@@ -561,8 +565,7 @@
   </div>
   <div class="about-layout fade">
     <p class="about-text">
-      As a lifelong athlete and biomedical engineer, I know what it means to push the human body—and what it takes to rebuild it when it breaks. Whether it's through twenty years on the tatami or tracking my 5km baseline, movement is at the core of my identity. With a dual background in <strong>General Engineering from Centrale Lyon</strong> and <strong>Biomedical Engineering at Imperial College London</strong>, I bridge the gap between complex biology and data. <br><br>
-      I’ve had the opportunity to work across both rigorous academic research and a leading MedTech environment, which helped me connect science and <span class="hi">machine learning</span> to real-world clinical challenges. My ultimate goal is simple: to leverage AI and deep tech to support individuals facing illness or injury, helping them rediscover their potential, receive precise care, and experience the joy of being active.
+      Sports lover and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a General Engineering background from <strong>Centrale Lyon</strong>. I’ve had the opportunity to work across both academic research and a leading MedTech company, which helped me connect science, <span class="hi">Artificial Intelligence</span>, and technology to real-world clinical challenges. Through my years of competitive sports, I've learned that true impact comes from collaboration, and I always strive to fill the gaps to help a team succeed and drive results. My ultimate goal: to leverage AI and deep tech to support individuals facing illness or injury, helping them rediscover their potential, receive the precise care they need, and experience the joy of being active.
     </p>
   </div>
 </div>
@@ -576,6 +579,7 @@
   </div>
 
   <div class="timeline">
+
     <div class="tl-item">
       <div class="tl-left">
         <p class="tl-date">Jan – Aug 2026</p>
@@ -651,6 +655,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </div>
 
@@ -663,6 +668,7 @@
   </div>
 
   <div class="timeline">
+
     <div class="tl-item">
       <div class="tl-left">
         <p class="tl-date">Oct 2025 – Aug 2026</p>
@@ -686,6 +692,7 @@
         <p class="tl-desc">Mathematics · Computer Science · Image Processing · Mechanical Engineering · Health Engineering · CFD · Economics</p>
       </div>
     </div>
+
   </div>
 </div>
 
