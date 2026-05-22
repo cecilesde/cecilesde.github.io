@@ -12,7 +12,7 @@
     /* ── DEEP TECH & HEALTH PALETTE ── */
     :root {
       --bg:        #F9F8F6; 
-      --bg-card:   #F0EFEA; 
+      --bg-card:   #F9F8F6; /* Garde le fond clair pour les cartes du tableau */
       --ink:       #1C2331; 
       --ink-2:     #475569; 
       --ink-3:     #94A3B8; 
@@ -140,14 +140,6 @@
     .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink-3); }
     .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
     
-    .btn-link {
-      background: none; border: none; padding: 0;
-      font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 500;
-      letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal);
-      cursor: pointer; text-decoration: underline; text-underline-offset: 4px;
-    }
-    .btn-link:hover { color: var(--ink); }
-
     .profile-wrap { position: relative; }
     .profile-frame { width: 300px; height: 380px; position: relative; }
     .profile-frame::after {
@@ -155,7 +147,7 @@
       top: 15px; left: 15px; right: -15px; bottom: -15px;
       border: 1px solid var(--teal); z-index: -1;
     }
-    .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(15%) contrast(1.1); }
+    .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05); }
 
     /* ── SECTIONS ── */
     .section-wrap { max-width: 900px; margin: 0 auto; padding: 7rem 2rem; }
@@ -185,8 +177,6 @@
     .tl-item:last-child { border-bottom: 1px solid var(--line); }
     
     .tl-right { padding-top: 0.3rem; text-align: right; }
-    
-    /* Force les dates sur une seule ligne */
     .tl-date { 
       font-family: 'DM Mono', monospace; 
       font-size: 0.95rem; 
@@ -204,7 +194,6 @@
     .tl-badge.edu { background: var(--violet-lt); color: var(--violet); }
     .tl-badge.award { background: #FEF3CD; color: #92600A; }
 
-    /* Nouvelle typographie pour les noms d'écoles/entreprises et lieux */
     .tl-org { 
       font-family: 'DM Sans', sans-serif; 
       font-size: 1rem; 
@@ -214,49 +203,85 @@
       letter-spacing: 0.05em;
       margin-bottom: 0.6rem; 
     }
-    .tl-loc {
-      color: var(--ink-3);
-      font-weight: 400;
-      text-transform: none;
-      letter-spacing: 0;
-    }
+    .tl-loc { color: var(--ink-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
     .tl-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
     .tl-desc { font-size: 1.05rem; color: var(--ink-2); line-height: 1.7; max-width: 650px; margin-bottom: 1.5rem; }
-    .tl-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-
+    
     .tag {
       font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em;
       text-transform: uppercase; padding: 0.4rem 0.8rem; background: white;
       color: var(--ink-2); border: 1px solid var(--line);
     }
 
-    /* ── PROJECTS ── */
-    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+    /* ── PROJECTS (FORMAT TABLEAU 2x2) ── */
+    .projects-grid { 
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap: 1px; /* Crée la bordure du tableau */
+      background: var(--line); 
+      border: 1px solid var(--line);
+    }
+    
     .proj-card {
       background: var(--bg-card);
-      border: 1px solid var(--line);
       padding: 2.5rem;
       display: flex; flex-direction: column;
+      position: relative;
+      transition: background 0.2s;
     }
 
+    /* Animation au survol de la carte (petite ligne en haut) */
+    .proj-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
+    }
+    .proj-card.c1::after { background: var(--teal); }
+    .proj-card.c2::after { background: var(--violet); }
+    .proj-card.c3::after { background: linear-gradient(90deg, var(--teal), var(--violet)); }
+    .proj-card.c4::after { background: var(--ink-3); }
+    
+    .proj-card:hover { background: white; }
+    .proj-card:hover::after { transform: scaleX(1); }
+
+    /* Espace photo avec bords adoucis */
     .proj-vis {
-      width: 100%; height: 180px;
+      width: 100%; height: 160px;
       background: var(--line);
       margin-bottom: 1.5rem;
       position: relative;
       overflow: hidden;
-      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 6px; /* Côté plus humain et doux */
     }
-    /* Dégradés temporaires en attendant tes vraies images */
+    /* Dégradés en attendant tes photos */
     .vis-emg { background: repeating-linear-gradient(90deg, #E2E8F0, #E2E8F0 1px, transparent 1px, transparent 20px), linear-gradient(180deg, #F9F8F6, #F1F5F9); }
     .vis-cells { background: radial-gradient(circle at 30% 50%, rgba(15,118,110,0.1) 0%, transparent 60%), #F1F5F9; }
+    .vis-cv { background: linear-gradient(135deg, #E0E7FF 0%, #F1F5F9 100%); }
     
     .proj-vis img { width: 100%; height: 100%; object-fit: cover; }
 
-    .proj-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--ink-3); letter-spacing: 0.1em; margin-bottom: 1rem; }
+    .proj-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--ink-3); letter-spacing: 0.05em; margin-bottom: 1rem; }
     .proj-title { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: 0.8rem; }
     .proj-desc { font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+
+    .btn-link {
+      background: none; border: none; padding: 0;
+      font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal);
+      cursor: pointer; text-decoration: none; align-self: flex-start;
+      border-bottom: 1px solid transparent; transition: border-color 0.2s;
+    }
+    .btn-link:hover { border-color: var(--teal); }
+
+    /* Case vide (Placeholder) */
+    .proj-placeholder { background: transparent; }
+    .proj-placeholder:hover { background: transparent; }
+    .proj-placeholder .proj-vis { 
+      background: transparent; border: 1px dashed var(--ink-3); 
+      display: flex; align-items: center; justify-content: center;
+    }
+    .proj-placeholder .proj-title, .proj-placeholder .proj-desc, .proj-placeholder .proj-num { opacity: 0.6; }
 
     /* ── NOW SECTION ── */
     .now-section {
@@ -293,21 +318,12 @@
     }
 
     .modal-hero-img {
-      width: 100%;
-      height: 250px;
-      background: var(--line);
-      margin-bottom: 2.5rem;
-      border-radius: 4px;
-      overflow: hidden;
+      width: 100%; height: 250px; background: var(--line);
+      margin-bottom: 2.5rem; border-radius: 6px; overflow: hidden;
     }
     .modal-hero-img img { width: 100%; height: 100%; object-fit: cover; }
     
-    .modal-text p {
-      font-size: 1.05rem;
-      color: var(--ink-2);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-    }
+    .modal-text p { font-size: 1.05rem; color: var(--ink-2); line-height: 1.8; margin-bottom: 1.5rem; }
 
     /* divider */
     .divider { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
@@ -342,11 +358,11 @@
 <section id="hero">
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow">Bridging Computational Intelligence and Life Sciences</p>
+      <p class="hero-eyebrow">MSc, Imperial College London × MEng, École Centrale de Lyon</p>
       <h1 class="hero-name">Cécile Soudé</h1>
       <div class="hero-rule"></div>
       <p class="hero-headline">Biomedical and AI Engineer</p>
-      <p class="hero-sub">Translating intricate physiological and biochemical data into robust, clinical-grade machine learning frameworks.</p>
+      <p class="hero-sub">Using my engineering and AI skills to solve real clinical challenges and make a meaningful impact on healthcare.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Work</a>
         <a href="mailto:cecile.soude25@imperial.ac.uk" class="btn-ghost">Get in touch</a>
@@ -499,22 +515,52 @@
   </div>
   
   <div class="projects-grid">
-    <div class="proj-card">
+    <div class="proj-card c1">
       <div class="proj-vis vis-emg">
         </div>
-      <p class="proj-num">01 — Thesis</p>
+      <p class="proj-num">01 — Jan - Aug 2026</p>
       <h3 class="proj-title">Neuromuscular Reset Analysis</h3>
       <p class="proj-desc">Synchronized multimodal biosignal dataset modeling error-based CNS recalibration and the temporal decay of a sensorimotor aftereffect.</p>
+      <div class="proj-tags">
+        <span class="tag">Python</span>
+        <span class="tag">OpenSim</span>
+      </div>
       <button class="btn-link" onclick="openModal('modal-thesis')">View Details →</button>
     </div>
 
-    <div class="proj-card">
+    <div class="proj-card c2">
       <div class="proj-vis vis-cells">
         </div>
-      <p class="proj-num">02 — Hackathon</p>
+      <p class="proj-num">02 — Feb 2026</p>
       <h3 class="proj-title">Agentic AI for Oncology</h3>
       <p class="proj-desc">Multi-agent RAG workflow grounded on clinical guidelines for hallucination-free tumor MRI reports. Built for GE Healthcare.</p>
+      <div class="proj-tags">
+        <span class="tag">RAG</span>
+        <span class="tag">XGBoost</span>
+      </div>
       <button class="btn-link" onclick="openModal('modal-hackathon')">View Details →</button>
+    </div>
+
+    <div class="proj-card c3">
+      <div class="proj-vis vis-cv">
+        </div>
+      <p class="proj-num">03 — Feb - Aug 2025</p>
+      <h3 class="proj-title">Single-Molecule Tracking</h3>
+      <p class="proj-desc">Computer vision pipeline for nanometer-scale particle localization in low-SNR fluorescence microscopy for diagnostics research.</p>
+      <div class="proj-tags">
+        <span class="tag">OpenCV</span>
+        <span class="tag">Python</span>
+      </div>
+      <button class="btn-link" onclick="openModal('modal-tracking')">View Details →</button>
+    </div>
+
+    <div class="proj-card c4 proj-placeholder">
+      <div class="proj-vis">
+        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--ink-3); text-transform: uppercase;">Incoming</span>
+      </div>
+      <p class="proj-num">04 — TBD</p>
+      <h3 class="proj-title">Next Project</h3>
+      <p class="proj-desc">Space reserved for the next research project, open-source tool, or proof of concept.</p>
     </div>
   </div>
 </div>
@@ -541,10 +587,7 @@
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <p class="section-num" style="margin-bottom: 1rem;">Project 01</p>
     <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Neuromuscular Reset Analysis</h3>
-    
-    <div class="modal-hero-img">
-        </div>
-
+    <div class="modal-hero-img"></div>
     <div class="modal-text">
       <p>Traditional biomechanical studies on barefoot running often lack high-fidelity temporal tracking to understand how quickly the Central Nervous System (CNS) recalibrates motor control after removing shoe constraints.</p>
       <p>To capture this, I designed a robust data pipeline using Python and MATLAB to synchronize high-frequency EMG signals, 3D optical motion capture data, and force plate kinetics. I then processed these raw inputs into an OpenSim musculoskeletal model to simulate internal joint moments.</p>
@@ -558,14 +601,25 @@
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <p class="section-num" style="margin-bottom: 1rem;">Project 02</p>
     <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Agentic AI for Oncology Reporting</h3>
-    
-    <div class="modal-hero-img">
-        </div>
-
+    <div class="modal-hero-img"></div>
     <div class="modal-text">
       <p>Hospital oncology departments face massive bottlenecks in MRI reporting, often relying on traditional FIFO (First-In-First-Out) queues rather than prioritizing by clinical urgency and tumor progression.</p>
       <p>For the GE Healthcare and Mistral AI Hackathon, our team had 48 hours to build an AI-driven triaging and reporting system that physicians could trust, strictly adhering to RECIST 1.1 medical guidelines. While part of the team focused on the core LLM fine-tuning, I anchored the clinical logic—ensuring the ML architecture outputted structured, hallucination-free narratives.</p>
       <p>We successfully engineered a multi-agent RAG workflow integrated with an XGBoost Learning-to-Rank system for the triage queue. This proof-of-concept bridged the gap between raw LLM capabilities and strict medical compliance, earning us a spot in the Top 8 out of 23 competing teams.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="modal-tracking" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event)">&times;</button>
+    <p class="section-num" style="margin-bottom: 1rem;">Project 03</p>
+    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Single-Molecule Tracking Pipeline</h3>
+    <div class="modal-hero-img"></div>
+    <div class="modal-text">
+      <p>In fluorescence microscopy applied to Parkinson's disease research, analyzing particle movement at the nanometer scale is critical. However, conventional equipment often suffers from low Signal-to-Noise Ratio (SNR), making localization extremely challenging.</p>
+      <p>I built a complete computer vision pipeline from scratch to address this. The solution utilized OpenCV and Python, incorporating advanced signal processing and 2D Gaussian fitting to achieve subpixel refinement of the molecules' positions.</p>
+      <p>This upgraded pipeline significantly enhanced the precision of our diagnostic equipment, enabling the research team to reliably track single-molecule dynamics under conditions where standard tracking software failed.</p>
     </div>
   </div>
 </div>
