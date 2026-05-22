@@ -150,8 +150,9 @@
     .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05); }
 
     /* ── SECTIONS ── */
+    .section-num { display: none; }
     .section-wrap { max-width: 900px; margin: 0 auto; padding: 7rem 2rem; }
-    .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 4rem; }
+    .section-header {display: flex; align-items: center; gap: 0; margin-bottom: 4rem; }
     .section-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 500; color: var(--teal); letter-spacing: 0.12em; }
     .section-title { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
     .section-line { flex: 1; height: 1px; background: var(--line); }
@@ -380,22 +381,20 @@
 <div class="divider"><hr></div>
 <div class="section-wrap" id="about">
   <div class="section-header">
-    <span class="section-num">01</span>
     <h2 class="section-title">About</h2>
     <div class="section-line"></div>
   </div>
   <div class="about-layout">
     <p class="about-text">
-  As a <span class="hi">sports lover</span> and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>, my passion lies at the intersection of data and human health. My time across academic research and the MedTech industry has taught me that the best solutions come from connecting algorithmic logic directly to real-world biological realities.<br><br>
-  I believe there is still so much to do, especially in helping scientists in the lab accelerate their research and discoveries. I want to be an active part of this revolution. For me, meaningful innovation is always a team effort, and I simply love working with passionate people to solve hard problems. My ultimate goal is to help build a future where every patient receives the right, personalized treatment, and where technology empowers individuals to rediscover their potential.
+  <span class="hi">Sports lover</span> and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>. I’ve had the opportunity to work across both academic research and a leading MedTech company, which allowed me to see the healthcare industry from different angles.<br><br>
+  My goal is to help build a future where every patient has access to the right treatment, and where technology empowers individuals to rediscover their potential.
     </p>
   </div>
 </div>
 
 <div class="divider"><hr></div>
-<div class="section-wrap" id="education">
-  <div class="section-header">
-    <span class="section-num">02</span>
+<div class="-wrap" id="education">
+  <div class="-header">
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
@@ -403,25 +402,23 @@
   <div class="timeline">
     <div class="tl-item">
       <div>
-        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+        <p class="tl-org">Imperial College London — London, UK </p>
         <h3 class="tl-title">MSc Biomedical Engineering</h3>
-        <p class="tl-desc">Machine Learning · Data Analysis · Human Neuromechanical Learning · Medical Devices · Computational Fluid Mechanics · Physiology</p>
+        <p class="tl-desc"> Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology</p>
       </div>
       <div class="tl-right">
         <p class="tl-date">Oct 2025 – Aug 2026</p>
-        <span class="tl-badge edu">MSc</span>
       </div>
     </div>
 
     <div class="tl-item">
       <div>
-        <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
+        <p class="tl-org">École Centrale de Lyon — Lyon, France</p>
         <h3 class="tl-title">MEng General Engineering</h3>
-        <p class="tl-desc">Mathematics · Computer Science · Image Processing · Mechanical Engineering · Health Engineering · CFD · Economics</p>
+        <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · CFD · Economics</p>
       </div>
       <div class="tl-right">
         <p class="tl-date">Sept 2022 – Aug 2026</p>
-        <span class="tl-badge edu">MEng</span>
       </div>
     </div>
   </div>
@@ -430,55 +427,20 @@
 <div class="divider"><hr></div>
 <div class="section-wrap" id="experiences">
   <div class="section-header">
-    <span class="section-num">03</span>
     <h2 class="section-title">Experiences</h2>
     <div class="section-line"></div>
   </div>
 
   <div class="timeline">
-    <div class="tl-item">
+     <div class="tl-item">
       <div>
-        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
-        <h3 class="tl-title">MSc Thesis — Predictive Biomechanics and Sensorimotor Learning</h3>
-        <p class="tl-desc">Synchronized multimodal dataset (EMG, 3D Motion Capture, Force Plates) to model how a barefoot neuromuscular reset recalibrates CNS motor control, measuring the temporal decay of a sensorimotor aftereffect stride-by-stride.</p>
-        <div class="tl-tags">
-          <span class="tag">Python</span>
-          <span class="tag">OpenSim</span>
-          <span class="tag">Time-Series ML</span>
-        </div>
-      </div>
-      <div class="tl-right">
-        <p class="tl-date">Jan – Aug 2026</p>
-        <span class="tl-badge work">Research</span>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div>
-        <p class="tl-org">Mistral AI × GE Healthcare <span class="tl-loc">— Remote</span></p>
-        <h3 class="tl-title">AI and Healthcare Hackathon Finalist</h3>
-        <p class="tl-desc">Developed a multi-agent RAG workflow grounded on RECIST 1.1 oncology guidelines for hallucination-free tumor MRI reports, paired with an XGBoost clinical triage system to optimize patient routing.</p>
-        <div class="tl-tags">
-          <span class="tag">Agentic AI</span>
-          <span class="tag">RAG</span>
-          <span class="tag">XGBoost</span>
-        </div>
-      </div>
-      <div class="tl-right">
-        <p class="tl-date">Feb 2026</p>
-        <span class="tl-badge award">Top 8 / 23</span>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div>
-        <p class="tl-org">EMBL × UNSW Sydney <span class="tl-loc">— Sydney, Australia</span></p>
-        <h3 class="tl-title">Research Engineer — Computer Vision</h3>
-        <p class="tl-desc">Built a computer vision pipeline from scratch for Single-Particle Tracking in fluorescence microscopy. Achieved nanometer-scale localization accuracy under low SNR for Parkinson's disease diagnostics research.</p>
+        <p class="tl-org">EMBL × UNSW — Sydney, Australia </p>
+        <h3 class="tl-title">Research Engineer - Computer Vision</h3>
+        <p class="tl-desc">Built a computer vision pipeline from scratch for <span class="hi">single-particle tracking and bacterial growth kinetics and analysis</span>. I used advanced image processing techniques, such as Gaussian fitting, noise filtering, and subpixel refinement, to overcome low signal-to-noise ratio in fluorescence microscopy images, achieving nanometer-scale localization accuracy</p>
         <div class="tl-tags">
           <span class="tag">OpenCV</span>
           <span class="tag">Python</span>
-          <span class="tag">Signal Proc.</span>
+          <span class="tag">Time-Series</span>
         </div>
       </div>
       <div class="tl-right">
@@ -489,9 +451,11 @@
     
     <div class="tl-item">
       <div>
-        <p class="tl-org">Stryker <span class="tl-loc">— Grenoble, France</span></p>
-        <h3 class="tl-title">R<span style="font-family: 'DM Sans', sans-serif;">&amp;</span>D Biomechanics Laboratory Intern</h3>
-        <p class="tl-desc">Acted as the laboratory project anchor for an experimental testing campaign on reverse shoulder prostheses. Coordinated multi-department validation runs under strict FDA and EU MDR standards.</p>
+        <p class="tl-org">Stryker — Grenoble, France </p>
+        <h3 class="tl-title">R<span style="font-family: 'DM Sans', sans-serif;">&amp;</span>D Biomechanics Test Laboratory Intern</h3>
+        <p class="tl-desc">Acted as the <span class="hi"> project manager </span>for a testing campaign on reverse shoulder prostheses. Assessed how
+          bone substitute materials affect Stryker implant performance, with results guiding future testing methods. Led testing validations within a COFRAC-accredited laboratory, ensuring strict compliance with FDA and
+          Europe MDR regulatory standards. </p>
         <div class="tl-tags">
           <span class="tag">Biomechanics</span>
           <span class="tag">FDA / MDR</span>
@@ -508,8 +472,7 @@
 <div class="divider"><hr></div>
 <div class="section-wrap" id="projects">
   <div class="section-header">
-    <span class="section-num">04</span>
-    <h2 class="section-title">Selected Projects</h2>
+    <h2 class="section-title">Projects</h2>
     <div class="section-line"></div>
   </div>
   
@@ -517,12 +480,15 @@
     <div class="proj-card c1">
       <div class="proj-vis vis-emg">
         </div>
-      <p class="proj-num">01 — Jan - Aug 2026</p>
-      <h3 class="proj-title">Neuromuscular Reset Analysis</h3>
-      <p class="proj-desc">Synchronized multimodal biosignal dataset modeling error-based CNS recalibration and the temporal decay of a sensorimotor aftereffect.</p>
+      <p class="proj-num">Jan - Aug 2026</p>
+      <h3 class="proj-title"> Sport Performance: Barefoot running as a neuromuscular recalibration ⎟ MSc Thesis - Imperial College London </h3>
+      <p class="proj-desc">This project investigates how a brief barefoot running session acts as a neuromuscular recalibration to correct shod running mechanics and mitigate injury risks factors. </p>
       <div class="proj-tags">
         <span class="tag">Python</span>
+        <span class="tag">MATLAB</span>
         <span class="tag">OpenSim</span>
+        <span class="tag">PCA</span>
+        <span class="tag">Time-Series</span>
       </div>
       <button class="btn-link" onclick="openModal('modal-thesis')">View Details →</button>
     </div>
@@ -530,38 +496,15 @@
     <div class="proj-card c2">
       <div class="proj-vis vis-cells">
         </div>
-      <p class="proj-num">02 — Feb 2026</p>
-      <h3 class="proj-title">Agentic AI for Oncology</h3>
-      <p class="proj-desc">Multi-agent RAG workflow grounded on clinical guidelines for hallucination-free tumor MRI reports. Built for GE Healthcare.</p>
+      <p class="proj-num"> 28 Feb - 1st March 2026</p>
+      <h3 class="proj-title">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon ⎟ Finalist Mistral AI x GE Healthcare </h3>
+      <p class="proj-desc">Built a <span class="hi"> multi-agent AI workflows</span> to help radiologists generate accurate, hallucination-free MRI tumor reports.</p>
       <div class="proj-tags">
+        <span class="tag">Agentic AI</span>
         <span class="tag">RAG</span>
-        <span class="tag">XGBoost</span>
       </div>
       <button class="btn-link" onclick="openModal('modal-hackathon')">View Details →</button>
     </div>
-
-    <div class="proj-card c3">
-      <div class="proj-vis vis-cv">
-        </div>
-      <p class="proj-num">03 — Feb - Aug 2025</p>
-      <h3 class="proj-title">Single-Molecule Tracking</h3>
-      <p class="proj-desc">Computer vision pipeline for nanometer-scale particle localization in low-SNR fluorescence microscopy for diagnostics research.</p>
-      <div class="proj-tags">
-        <span class="tag">OpenCV</span>
-        <span class="tag">Python</span>
-      </div>
-      <button class="btn-link" onclick="openModal('modal-tracking')">View Details →</button>
-    </div>
-
-    <div class="proj-card c4 proj-placeholder">
-      <div class="proj-vis">
-        <span style="font-family: 'DM Mono', monospace; font-size: 0.8rem; color: var(--ink-3); text-transform: uppercase;">Incoming</span>
-      </div>
-      <p class="proj-num">04 — TBD</p>
-      <h3 class="proj-title">Next Project</h3>
-      <p class="proj-desc">Space reserved for the next research project, open-source tool, or proof of concept.</p>
-    </div>
-  </div>
 </div>
 
 <div class="now-section">
@@ -585,12 +528,12 @@
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <p class="section-num" style="margin-bottom: 1rem;">Project 01</p>
-    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Neuromuscular Reset Analysis</h3>
+    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Sport Performance: Barefoot running as a neuromuscular recalibration</h3>
     <div class="modal-hero-img"></div>
     <div class="modal-text">
-      <p>Traditional biomechanical studies on barefoot running often lack high-fidelity temporal tracking to understand how quickly the Central Nervous System (CNS) recalibrates motor control after removing shoe constraints.</p>
-      <p>To capture this, I designed a robust data pipeline using Python and MATLAB to synchronize high-frequency EMG signals, 3D optical motion capture data, and force plate kinetics. I then processed these raw inputs into an OpenSim musculoskeletal model to simulate internal joint moments.</p>
-      <p>This approach allowed me to successfully map the error-based learning curve, providing quantitative biomechanical evidence of neuromuscular reset and establishing a replicable framework for future sensorimotor learning research.</p>
+      <p>I am investigating whether a brief barefoot running session can act as a "neuromuscular reset" to improve running mechanics and reduce injury risk factors in both recreational and experienced runners.</p>
+      <p>I designed a multimodal data pipeline in Python and MATLAB to synchronize high-frequency EMG signals, 3D motion capture, and force plate kinetics. I am currently processing these inputs through OpenSim musculoskeletal models to isolate internal joint moments and identify subtle recalibration patterns in motor control.</p>
+      <p>By applying PCA and time-series analysis, I aim to map how the CNS adjusts to the removal of shoe constraints. The goal is to establish a protocol that helps runners understand and optimize their movement patterns to stay injury-free using their natural running gait.</p>
     </div>
   </div>
 </div>
@@ -599,26 +542,12 @@
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <p class="section-num" style="margin-bottom: 1rem;">Project 02</p>
-    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Agentic AI for Oncology Reporting</h3>
+    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon ⎟ Finalist Mistral AI x GE Healthcare </h3>
     <div class="modal-hero-img"></div>
     <div class="modal-text">
-      <p>Hospital oncology departments face massive bottlenecks in MRI reporting, often relying on traditional FIFO (First-In-First-Out) queues rather than prioritizing by clinical urgency and tumor progression.</p>
-      <p>For the GE Healthcare and Mistral AI Hackathon, our team had 48 hours to build an AI-driven triaging and reporting system that physicians could trust, strictly adhering to RECIST 1.1 medical guidelines. While part of the team focused on the core LLM fine-tuning, I anchored the clinical logic—ensuring the ML architecture outputted structured, hallucination-free narratives.</p>
-      <p>We successfully engineered a multi-agent RAG workflow integrated with an XGBoost Learning-to-Rank system for the triage queue. This proof-of-concept bridged the gap between raw LLM capabilities and strict medical compliance, earning us a spot in the Top 8 out of 23 competing teams.</p>
-    </div>
-  </div>
-</div>
-
-<div class="modal-overlay" id="modal-tracking" onclick="closeModal(event)">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <p class="section-num" style="margin-bottom: 1rem;">Project 03</p>
-    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Single-Molecule Tracking Pipeline</h3>
-    <div class="modal-hero-img"></div>
-    <div class="modal-text">
-      <p>In fluorescence microscopy applied to Parkinson's disease research, analyzing particle movement at the nanometer scale is critical. However, conventional equipment often suffers from low Signal-to-Noise Ratio (SNR), making localization extremely challenging.</p>
-      <p>I built a complete computer vision pipeline from scratch to address this. The solution utilized OpenCV and Python, incorporating advanced signal processing and 2D Gaussian fitting to achieve subpixel refinement of the molecules' positions.</p>
-      <p>This upgraded pipeline significantly enhanced the precision of our diagnostic equipment, enabling the research team to reliably track single-molecule dynamics under conditions where standard tracking software failed.</p>
+      <p>Radiologists often spend too much time reviewing manually patient history and previous scans to draft current tumor reports, creating significant bottlenecks in the clinical workflow. For this hackathon, our goal was to build an AI-driven system that would assist radiologists in drafting MRI tumor reports while integrating easily into their existing routine.</p>
+      <p>Over 48 hours, competing against 23 teams, we designed and built a multi-agent AI workflow based on a long- and short-term memory. To differentiate our solution, I integrated a RAG pipeline strictly grounded in RECIST 1.1 medical guidelines. To guarantee a zero-hallucination environment for clinical use, we forced the LLM to output its responses exclusively in a structured JSON format, ensuring data integrity and consistency.</p>
+      <p>We successfully bridged the gap between agentic AI capabilities and strict medical compliance. Our app earned us a spot in the Top 8.</p>
     </div>
   </div>
 </div>
