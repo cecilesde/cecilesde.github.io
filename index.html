@@ -9,15 +9,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <style>
-    /* ── DEEP TECH & HEALTH PALETTE ── */
     :root {
-      --bg:        #F9F8F6; 
-      --bg-card:   #F9F8F6; /* Garde le fond clair pour les cartes du tableau */
-      --ink:       #1C2331; 
-      --ink-2:     #475569; 
-      --ink-3:     #94A3B8; 
+      --bg:        #F9F8F6;
+      --bg-card:   #F9F8F6;
+      --ink:       #1C2331;
+      --ink-2:     #475569;
+      --ink-3:     #94A3B8;
       --line:      #E2E8F0;
-      --teal:      #0F766E; 
+      --teal:      #0F766E;
       --teal-light:#CCFBF1;
       --violet:    #4338CA;
       --violet-lt: #E0E7FF;
@@ -38,109 +37,69 @@
 
     /* ── NAV ── */
     nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.4rem 4rem;
-      background: rgba(249,248,246,0.85);
+      background: rgba(249,248,246,0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-
     .nav-logo {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.9rem;
-      letter-spacing: 0.1em;
-      color: var(--ink);
-      text-transform: uppercase;
-      font-weight: 500;
+      font-family: 'DM Mono', monospace; font-size: 0.9rem;
+      letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase; font-weight: 500;
     }
-
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--ink-2);
-      text-decoration: none;
-      transition: color 0.2s;
+      font-family: 'DM Mono', monospace; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--ink-2); text-decoration: none; transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--teal); }
-
     .nav-cta {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--ink);
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      transition: background 0.2s;
+      font-family: 'DM Mono', monospace; font-size: 0.85rem;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--bg); background: var(--ink); text-decoration: none;
+      padding: 0.5rem 1.2rem; transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--teal); }
 
     /* ── HERO ── */
     #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 8rem 2rem 4rem;
+      min-height: 100vh; display: flex; align-items: center;
+      max-width: 1000px; margin: 0 auto; padding: 8rem 2rem 4rem;
     }
-
     .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 300px;
-      gap: 5rem;
-      align-items: center;
-      width: 100%;
+      display: grid; grid-template-columns: 1fr 300px;
+      gap: 5rem; align-items: center; width: 100%;
     }
-
     .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1.4rem;
+      font-family: 'DM Mono', monospace; font-size: 0.85rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--teal); margin-bottom: 1.4rem;
     }
-
     .hero-name {
       font-family: 'Fraunces', serif;
       font-size: clamp(3.5rem, 6vw, 5.5rem);
-      font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      white-space: nowrap;
+      font-weight: 400; line-height: 1.0;
+      letter-spacing: -0.02em; color: var(--ink); white-space: nowrap;
     }
-
     .hero-rule { width: 3rem; height: 2px; background: var(--teal); margin: 2rem 0; }
     .hero-headline { font-size: 1.25rem; font-weight: 500; color: var(--ink-2); margin-bottom: 0.5rem; }
     .hero-sub { font-size: 1.05rem; color: var(--ink-2); max-width: 500px; line-height: 1.8; }
-
     .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; align-items: center; }
-    
+
     .btn-primary, .btn-ghost {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.85rem 1.8rem;
       font-family: 'DM Mono', monospace; font-size: 0.85rem;
-      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
-      transition: all 0.2s; cursor: pointer; border: none;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
     }
     .btn-primary { background: var(--teal); color: #fff; }
     .btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
-    
     .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink-3); }
     .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
-    
-    .profile-wrap { position: relative; }
+
     .profile-frame { width: 300px; height: 380px; position: relative; }
     .profile-frame::after {
       content: ''; position: absolute;
@@ -150,92 +109,123 @@
     .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05); }
 
     /* ── SECTIONS ── */
-    .section-num { display: none; }
     .section-wrap { max-width: 900px; margin: 0 auto; padding: 7rem 2rem; }
-    .section-header {display: flex; align-items: center; gap: 0; margin-bottom: 4rem; }
-    .section-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 500; color: var(--teal); letter-spacing: 0.12em; }
+    .section-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 4rem; }
     .section-title { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
     .section-line { flex: 1; height: 1px; background: var(--line); }
 
     /* ── ABOUT ── */
-    .about-layout { max-width: 800px; margin: 0 auto; }
-    .about-text {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 300;
-      line-height: 1.85;
-      color: var(--ink-2);
-    }
+    .about-layout { max-width: 800px; }
+    .about-text { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 1.85; color: var(--ink-2); }
     .about-text strong { color: var(--ink); font-weight: 500; }
     .about-text .hi { color: var(--teal); font-weight: 500; }
 
     /* ── TIMELINE ── */
-    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline { display: flex; flex-direction: column; }
+
     .tl-item {
-      display: grid; grid-template-columns: 1fr 220px; gap: 3rem;
-      padding: 3rem 0; border-top: 1px solid var(--line);
+      display: grid; grid-template-columns: 1fr 240px;
+      gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--line);
     }
     .tl-item:last-child { border-bottom: 1px solid var(--line); }
-    
+
     .tl-right { padding-top: 0.3rem; text-align: right; }
-    .tl-date { 
-      font-family: 'DM Mono', monospace; 
-      font-size: 0.95rem; 
-      color: var(--ink-2); 
-      letter-spacing: 0.05em; 
-      margin-bottom: 1rem; 
-      white-space: nowrap; 
+    .tl-date {
+      font-family: 'DM Mono', monospace; font-size: 0.95rem;
+      color: var(--ink-2); letter-spacing: 0.05em;
+      margin-bottom: 1rem; white-space: nowrap;
     }
-    
     .tl-badge {
       display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem;
       letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.7rem;
     }
-    .tl-badge.work { background: var(--teal-light); color: var(--teal); }
-    .tl-badge.edu { background: var(--violet-lt); color: var(--violet); }
+    .tl-badge.work  { background: var(--teal-light); color: var(--teal); }
+    .tl-badge.edu   { background: var(--violet-lt);  color: var(--violet); }
     .tl-badge.award { background: #FEF3CD; color: #92600A; }
 
-    .tl-org { 
-      font-family: 'DM Sans', sans-serif; 
-      font-size: 1rem; 
-      font-weight: 600; 
-      text-transform: uppercase;
-      color: var(--teal); 
+    /* ── EDUCATION LOGO ROW ── */
+    .tl-org-row {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .school-logo {
+      width: 32px; height: 32px;
+      border-radius: 4px;
+      object-fit: contain;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 2px;
+      flex-shrink: 0;
+    }
+
+    /* SVG logos inline */
+    .school-logo-svg {
+      width: 32px; height: 32px;
+      border-radius: 4px;
+      background: white;
+      border: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .tl-org {
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+      text-transform: uppercase; color: var(--teal);
       letter-spacing: 0.05em;
-      margin-bottom: 0.6rem; 
     }
     .tl-loc { color: var(--ink-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
-    .tl-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
-    .tl-desc { font-size: 1.05rem; color: var(--ink-2); line-height: 1.7; max-width: 650px; margin-bottom: 1.5rem; }
-    
+    .tl-title {
+      font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500;
+      color: var(--ink); margin-bottom: 1rem; line-height: 1.3;
+    }
+    .tl-desc {
+      font-size: 1.05rem; color: var(--ink-2); line-height: 1.75;
+      max-width: 100%;          /* full width — no cut-off */
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── TAGS ── */
     .tag {
       font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em;
-      text-transform: uppercase; padding: 0.4rem 0.8rem; background: white;
-      color: var(--ink-2); border: 1px solid var(--line);
+      text-transform: uppercase; padding: 0.4rem 0.8rem;
+      background: white; color: var(--ink-2); border: 1px solid var(--line);
     }
+    .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag-t { background: var(--teal-light); color: var(--teal); border-color: rgba(15,118,110,0.2); }
+    .tag-v { background: var(--violet-lt);  color: var(--violet); border-color: rgba(67,56,202,0.2); }
 
-    /* ── PROJECTS (FORMAT TABLEAU 2x2) ── */
-    .projects-grid { 
-      display: grid; 
-      /* Si l'écran est large, 2 colonnes. Si l'écran est petit, 1 colonne. */
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-      gap: 4rem; 
-      background: transparent; 
-      border: none;
-      max-width: 900px; /* Aligné sur ton About */
-      margin: 0 auto;
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--line);
+      border: 1px solid var(--line);
     }
-    
-    .proj-card {
-      background: transparent;
-      padding: 0;
-      border: none;
-      display: flex;
-      flex-direction: column;
+    .skill-block { background: var(--bg); padding: 2.2rem 2.4rem; }
+    .skill-cat {
+      font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 600;
+      color: var(--ink); margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.65rem;
     }
+    .skill-cat::before {
+      content: ''; width: 3px; height: 16px; display: inline-block; flex-shrink: 0;
+    }
+    .skill-block:nth-child(1) .skill-cat::before { background: var(--teal); }
+    .skill-block:nth-child(2) .skill-cat::before { background: var(--violet); }
+    .skill-block:nth-child(3) .skill-cat::before { background: var(--ink-3); }
+    .skill-block:nth-child(4) .skill-cat::before { background: #C8A96A; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
-    /* Animation au survol de la carte (petite ligne en haut) */
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 4rem; background: transparent; border: none;
+      max-width: 900px; margin: 0 auto;
+    }
+    .proj-card { background: transparent; padding: 0; border: none; display: flex; flex-direction: column; position: relative; }
     .proj-card::after {
       content: ''; position: absolute; top: 0; left: 0; right: 0;
       height: 3px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
@@ -243,41 +233,10 @@
     .proj-card.c1::after { background: var(--teal); }
     .proj-card.c2::after { background: var(--violet); }
     .proj-card.c3::after { background: linear-gradient(90deg, var(--teal), var(--violet)); }
-    .proj-card.c4::after { background: var(--ink-3); }
-    
-    .proj-card:hover { background: white; }
     .proj-card:hover::after { transform: scaleX(1); }
 
-    .proj-vis {
-      width: 100%; 
-      height: 160px;
-      background: var(--line);
-      margin-bottom: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px; 
-    }
-    
-    /* L'optimisation clé pour tes images */
-    .proj-vis img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover;
-      display: block; /* Supprime l'espace vide sous l'image */
-      transition: transform 0.3s ease; /* Petit effet sympa au survol */
-    }
-    
-    /* Effet au survol pour donner vie au portfolio */
-    .proj-vis:hover img {
-      transform: scale(1.05); /* Zoom très léger et élégant */
-    }
-
     .proj-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--ink-3); letter-spacing: 0.05em; margin-bottom: 1rem; }
-    .proj-title {font-family: 'Fraunces', serif; font-size: 1.2rem; /* Légèrement plus petit pour éviter de faire 4 lignes */ font-weight: 500; color: var(--ink); 
-    line-height: 1.3; 
-    margin-bottom: 0.8rem;
-    min-height: 3em; /* Garantit que tous les titres font la même hauteur */
-    }
+    .proj-title { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 0.8rem; }
     .proj-desc { font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
     .proj-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
 
@@ -290,28 +249,7 @@
     }
     .btn-link:hover { border-color: var(--teal); }
 
-    /* Case vide (Placeholder) */
-    .proj-placeholder { background: transparent; }
-    .proj-placeholder:hover { background: transparent; }
-    .proj-placeholder .proj-vis { 
-      background: transparent; border: 1px dashed var(--ink-3); 
-      display: flex; align-items: center; justify-content: center;
-    }
-    .proj-placeholder .proj-title, .proj-placeholder .proj-desc, .proj-placeholder .proj-num { opacity: 0.6; }
-
-    /* ── NOW SECTION ── */
-    .now-section {
-      background: white; border: 1px solid var(--line);
-      padding: 3rem; margin: 0 auto 5rem; max-width: 900px;
-      display: grid; grid-template-columns: 250px 1fr; gap: 2rem;
-    }
-    .now-title { font-family: 'Fraunces', serif; font-size: 1.4rem; color: var(--ink); margin-bottom: 0.5rem; }
-    .now-sub { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.05em; }
-    .now-list { list-style: none; }
-    .now-list li { font-size: 1.05rem; color: var(--ink-2); margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
-    .now-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-family: 'DM Mono', monospace; }
-
-    /* ── MODALS (POPUPS) ── */
+    /* ── MODALS ── */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(28,35,49,0.6);
       backdrop-filter: blur(8px); z-index: 999;
@@ -319,31 +257,29 @@
       opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
     }
     .modal-overlay.active { opacity: 1; pointer-events: auto; }
-    
     .modal-content {
       background: var(--bg); width: 100%; max-width: 700px; max-height: 90vh;
       overflow-y: auto; padding: 4rem; position: relative;
       border: 1px solid var(--line); transform: translateY(20px); transition: transform 0.3s ease;
     }
     .modal-overlay.active .modal-content { transform: translateY(0); }
-    
     .modal-close {
       position: absolute; top: 1.5rem; right: 1.5rem;
       background: none; border: none; font-size: 2rem;
       color: var(--ink-2); cursor: pointer; line-height: 1;
     }
-
-    .modal-hero-img {
-      width: 100%; height: 250px; background: var(--line);
-      margin-bottom: 2.5rem; border-radius: 6px; overflow: hidden;
-    }
-    .modal-hero-img img { width: 100%; height: 100%; object-fit: cover; }
-    
+    .modal-title { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin-bottom: 2.5rem; line-height: 1.3; }
     .modal-text p { font-size: 1.05rem; color: var(--ink-2); line-height: 1.8; margin-bottom: 1.5rem; }
 
     /* divider */
     .divider { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
     .divider hr { border: none; border-top: 1px solid var(--line); }
+
+    /* fade */
+    .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .fade.visible { opacity: 1; transform: none; }
+    .tl-item { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .tl-item.visible { opacity: 1; transform: none; }
 
     @media (max-width: 768px) {
       nav { padding: 1.1rem 1.5rem; }
@@ -351,9 +287,9 @@
       .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
       .profile-frame { width: 100%; max-width: 300px; height: 380px; margin: 0 auto; }
       .tl-item { grid-template-columns: 1fr; gap: 1.5rem; }
-      .tl-right { text-align: left; margin-top: 0.5rem; display: flex; gap: 1rem; align-items: center; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .now-section { grid-template-columns: 1fr; padding: 2rem; margin: 0 2rem 4rem; }
+      .tl-right { text-align: left; display: flex; gap: 1rem; align-items: center; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .projects-grid { grid-template-columns: 1fr; gap: 3rem; }
       .modal-content { padding: 2.5rem 1.5rem; }
     }
   </style>
@@ -366,11 +302,13 @@
     <li><a href="#about">About</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#experiences">Experiences</a></li>
+    <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
   <a href="cv.pdf" class="nav-cta" download>Download CV</a>
 </nav>
 
+<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div>
@@ -378,14 +316,13 @@
       <h1 class="hero-name">Cécile Soudé</h1>
       <div class="hero-rule"></div>
       <p class="hero-headline">Biomedical and AI Engineer</p>
-      <p class="hero-sub">Using my engineering skills to solve real clinical challenges and make a meaningful impact on healthcare</p>
+      <p class="hero-sub">Using engineering and AI to solve real clinical challenges — and help people rediscover what their bodies can do.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Work</a>
         <a href="https://www.linkedin.com/in/cécile-soudé-384027218" target="_blank" class="btn-ghost">LinkedIn</a>
         <a href="mailto:cecile.soude25@imperial.ac.uk" class="btn-ghost">Email</a>
       </div>
     </div>
-
     <div class="profile-wrap">
       <div class="profile-frame">
         <img src="profile.jpg" alt="Cécile Soudé" class="profile-img" onerror="this.style.display='none'">
@@ -394,66 +331,107 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<div class="divider"><hr></div>
 <div class="section-wrap" id="about">
   <div class="section-header">
     <h2 class="section-title">About</h2>
     <div class="section-line"></div>
   </div>
-  <div class="about-layout">
+  <div class="about-layout fade">
     <p class="about-text">
-  <span class="hi">Sports lover</span> and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>. I’ve had the opportunity to work across both academic research and a leading MedTech company, which allowed me to see the healthcare industry from different angles.<br><br>
-  My goal is to help build a future where every patient has access to the right treatment, and where technology empowers individuals to rediscover their potential.
+      <span class="hi">Sports lover</span> and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>. I've had the opportunity to work across both academic research and a leading MedTech company, which helped me connect science and technology to real-world healthcare challenges.<br><br>
+      I'm drawn to work where <strong>AI and data make the invisible measurable</strong> — whether that's tracking single molecules for Parkinson's diagnostics, decoding how the nervous system learns to move, or building agentic systems that bring better care to more patients. My goal is simple: use technology to help people facing illness or injury rediscover their potential.
     </p>
   </div>
 </div>
 
+<!-- EDUCATION -->
+<div class="divider"><hr></div>
 <div class="section-wrap" id="education">
   <div class="section-header">
     <h2 class="section-title">Education</h2>
     <div class="section-line"></div>
   </div>
-
   <div class="timeline">
+
     <div class="tl-item">
       <div>
-        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+        <!-- Logo row Imperial -->
+        <div class="tl-org-row">
+          <!-- Imperial shield SVG (simplified) -->
+          <div class="school-logo-svg" title="Imperial College London">
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="white"/>
+              <!-- Imperial crown simplified -->
+              <rect x="20" y="60" width="60" height="8" fill="#003E74"/>
+              <rect x="28" y="50" width="44" height="12" fill="#003E74"/>
+              <rect x="20" y="68" width="60" height="6" fill="#003E74"/>
+              <polygon points="20,60 35,30 50,50 65,30 80,60" fill="#003E74"/>
+              <rect x="45" y="74" width="10" height="16" fill="#003E74"/>
+            </svg>
+          </div>
+          <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+        </div>
         <h3 class="tl-title">MSc Biomedical Engineering</h3>
-        <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology</p>
+        <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology · Machine Learning</p>
       </div>
       <div class="tl-right">
         <p class="tl-date">Oct 2025 – Aug 2026</p>
+        <span class="tl-badge edu">MSc</span>
       </div>
     </div>
 
     <div class="tl-item">
       <div>
-        <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
+        <!-- Logo row Centrale Lyon -->
+        <div class="tl-org-row">
+          <div class="school-logo-svg" title="École Centrale de Lyon">
+            <svg width="24" height="24" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="100" height="100" fill="white"/>
+              <!-- ECL simplified cog/gear shape -->
+              <circle cx="50" cy="50" r="22" fill="none" stroke="#E4003A" stroke-width="8"/>
+              <circle cx="50" cy="50" r="8" fill="#E4003A"/>
+              <!-- gear teeth -->
+              <rect x="46" y="18" width="8" height="12" rx="2" fill="#E4003A"/>
+              <rect x="46" y="70" width="8" height="12" rx="2" fill="#E4003A"/>
+              <rect x="18" y="46" width="12" height="8" rx="2" fill="#E4003A"/>
+              <rect x="70" y="46" width="12" height="8" rx="2" fill="#E4003A"/>
+            </svg>
+          </div>
+          <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
+        </div>
         <h3 class="tl-title">MEng General Engineering</h3>
-        <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · CFD · Economics</p>
+        <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · Materials Engineering · Computational Fluid Dynamics · Economics · Health Engineering</p>
       </div>
       <div class="tl-right">
         <p class="tl-date">Sept 2022 – Aug 2026</p>
+        <span class="tl-badge edu">MEng</span>
       </div>
     </div>
+
   </div>
 </div>
 
+<!-- EXPERIENCES -->
+<div class="divider"><hr></div>
 <div class="section-wrap" id="experiences">
   <div class="section-header">
     <h2 class="section-title">Experiences</h2>
     <div class="section-line"></div>
   </div>
-
   <div class="timeline">
-     <div class="tl-item">
+
+    <div class="tl-item">
       <div>
-        <p class="tl-org">EMBL × UNSW — Sydney, Australia </p>
-        <h3 class="tl-title">Research Engineer - Computer Vision</h3>
-        <p class="tl-desc">Built a computer vision pipeline from scratch for <span class="hi">single-particle tracking and bacterial growth kinetics and analysis</span>. I used advanced image processing techniques, such as Gaussian fitting, noise filtering, and subpixel refinement, to overcome low signal-to-noise ratio in fluorescence microscopy images, achieving nanometer-scale localization accuracy</p>
+        <p class="tl-org">EMBL × UNSW <span class="tl-loc">— Sydney, Australia</span></p>
+        <h3 class="tl-title">Research Engineer — Computer Vision & Single-Molecule Science</h3>
+        <p class="tl-desc">Built a computer vision pipeline from scratch for <span class="hi">single-particle tracking and bacterial growth kinetics analysis</span>. Used advanced image processing techniques — Gaussian fitting, noise filtering, subpixel refinement — to overcome low SNR in fluorescence microscopy images, achieving nanometer-scale localization accuracy. Upgraded diagnostic equipment for Parkinson's disease research by designing an integrated control system and UI.</p>
         <div class="tl-tags">
-          <span class="tag">OpenCV</span>
-          <span class="tag">Python</span>
+          <span class="tag tag-t">OpenCV</span>
+          <span class="tag tag-t">Python</span>
           <span class="tag">Time-Series</span>
+          <span class="tag">Signal Processing</span>
         </div>
       </div>
       <div class="tl-right">
@@ -461,17 +439,16 @@
         <span class="tl-badge work">Research</span>
       </div>
     </div>
-    
+
     <div class="tl-item">
       <div>
-        <p class="tl-org">Stryker — Grenoble, France </p>
-        <h3 class="tl-title">R<span style="font-family: 'DM Sans', sans-serif;">&amp;</span>D Biomechanics Test Laboratory Intern</h3>
-        <p class="tl-desc">Acted as the <span class="hi"> project manager </span>for a testing campaign on reverse shoulder prostheses. Assessed how
-          bone substitute materials affect Stryker implant performance, with results guiding future testing methods. Led testing validations within a COFRAC-accredited laboratory, ensuring strict compliance with FDA and
-          Europe MDR regulatory standards. </p>
+        <p class="tl-org">Stryker <span class="tl-loc">— Grenoble, France</span></p>
+        <h3 class="tl-title">R&amp;D Biomechanics Test Laboratory Intern</h3>
+        <p class="tl-desc">Acted as <span class="hi">project manager</span> for a research testing campaign on reverse shoulder prostheses. Assessed how bone substitute materials affect implant performance, with results guiding future testing methods. Led validations within a COFRAC-accredited laboratory ensuring strict compliance with FDA and EU MDR regulatory standards.</p>
         <div class="tl-tags">
           <span class="tag">Biomechanics</span>
           <span class="tag">FDA / MDR</span>
+          <span class="tag">Project Management</span>
         </div>
       </div>
       <div class="tl-right">
@@ -479,20 +456,81 @@
         <span class="tl-badge work">Industry</span>
       </div>
     </div>
+
   </div>
 </div>
 
+<!-- SKILLS -->
+<div class="divider"><hr></div>
+<div class="section-wrap" id="skills">
+  <div class="section-header">
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="skills-grid fade">
+    <div class="skill-block">
+      <p class="skill-cat">AI &amp; Machine Learning</p>
+      <div class="skill-tags">
+        <span class="tag tag-t">scikit-learn</span>
+        <span class="tag tag-t">XGBoost</span>
+        <span class="tag tag-t">RAG Pipelines</span>
+        <span class="tag tag-t">Agentic AI</span>
+        <span class="tag">LLM Grounding</span>
+        <span class="tag">Learning-to-Rank</span>
+        <span class="tag">Time-Series ML</span>
+        <span class="tag">PCA</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Biomedical Engineering</p>
+      <div class="skill-tags">
+        <span class="tag tag-v">EMG Analysis</span>
+        <span class="tag tag-v">3D Motion Capture</span>
+        <span class="tag tag-v">Force Plate Kinetics</span>
+        <span class="tag tag-v">OpenSim</span>
+        <span class="tag">Medical Devices</span>
+        <span class="tag">FDA / MDR</span>
+        <span class="tag">Biomechanics</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Programming</p>
+      <div class="skill-tags">
+        <span class="tag tag-t">Python</span>
+        <span class="tag tag-t">MATLAB</span>
+        <span class="tag">OpenCV</span>
+        <span class="tag">NumPy · Pandas</span>
+        <span class="tag">Git / GitHub</span>
+        <span class="tag">scikit-learn</span>
+      </div>
+    </div>
+    <div class="skill-block">
+      <p class="skill-cat">Data Science</p>
+      <div class="skill-tags">
+        <span class="tag">Signal Processing</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Multimodal Data</span>
+        <span class="tag">Statistical Analysis</span>
+        <span class="tag">Gaussian Fitting</span>
+        <span class="tag">Subpixel Refinement</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="divider"><hr></div>
 <div class="section-wrap" id="projects">
   <div class="section-header">
     <h2 class="section-title">Projects</h2>
     <div class="section-line"></div>
   </div>
-  
   <div class="projects-grid">
+
     <div class="proj-card c1">
-      <p class="proj-num">Jan - Aug 2026</p>
-      <h3 class="proj-title"> Sport Performance: barefoot running as a neuromuscular warm-up ⎟ MSc Thesis - Imperial College London </h3>
-      <p class="proj-desc">This project investigates how a brief barefoot running session acts as a neuromuscular recalibration to correct shod running mechanics and mitigate injury risks factors. </p>
+      <p class="proj-num">Jan – Aug 2026</p>
+      <h3 class="proj-title">Sport Performance: Barefoot Running as a Neuromuscular Warm-Up · MSc Thesis, Imperial College London</h3>
+      <p class="proj-desc">Investigating how a brief barefoot running session acts as a neuromuscular recalibration to correct shod running mechanics and mitigate injury risk factors in recreational and experienced runners.</p>
       <div class="proj-tags">
         <span class="tag">Python</span>
         <span class="tag">MATLAB</span>
@@ -504,45 +542,49 @@
     </div>
 
     <div class="proj-card c2">
-      <p class="proj-num"> 28 Feb - 1st March 2026</p>
-      <h3 class="proj-title">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon Finalist ⎟ Mistral AI x GE Healthcare </h3>
-      <p class="proj-desc">Built a <span class="hi"> multi-agent AI workflows</span> to help radiologists generate accurate, hallucination-free MRI tumor reports.</p>
+      <p class="proj-num">Feb – Mar 2026</p>
+      <h3 class="proj-title">AI &amp; Healthcare Hackathon Finalist · Mistral AI × GE Healthcare</h3>
+      <p class="proj-desc">Built a <span class="hi">multi-agent AI workflow</span> to help radiologists generate accurate, hallucination-free MRI tumor reports grounded on RECIST 1.1 oncology guidelines.</p>
       <div class="proj-tags">
         <span class="tag">Agentic AI</span>
-        <span class="tag">DICOM</span>
         <span class="tag">RAG</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">LLMs</span>
       </div>
       <button class="btn-link" onclick="openModal('modal-hackathon')">View Details →</button>
     </div>
+
+  </div>
 </div>
 
+<!-- FOOTER -->
 <div class="divider"><hr></div>
 <footer style="padding: 2.5rem 4rem; text-align: center; color: var(--ink-3); font-family: 'DM Mono', monospace; font-size: 0.85rem;">
-  © 2026 Cécile Soudé. All rights reserved.
+  © 2026 Cécile Soudé · All rights reserved.
 </footer>
 
+<!-- MODAL — THESIS -->
 <div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <p class="section-num" style="margin-bottom: 1rem;">Project 01</p>
-    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Sport Performance: Barefoot running as a neuromuscular recalibration</h3>
+    <h3 class="modal-title">Sport Performance: Barefoot Running as a Neuromuscular Recalibration</h3>
     <div class="modal-text">
       <p>I am investigating whether a brief barefoot running session can act as a "neuromuscular reset" to improve running mechanics and reduce injury risk factors in both recreational and experienced runners.</p>
       <p>I designed a multimodal data pipeline in Python and MATLAB to synchronize high-frequency EMG signals, 3D motion capture, and force plate kinetics. I am currently processing these inputs through OpenSim musculoskeletal models to isolate internal joint moments and identify subtle recalibration patterns in motor control.</p>
-      <p>By applying PCA and time-series analysis, I aim to map how the CNS adjusts to the removal of shoe constraints. The goal is to establish a protocol that helps runners understand and optimize their movement patterns to stay injury-free using their natural running gait.</p>
+      <p>By applying PCA and time-series analysis, I aim to map how the CNS adjusts to the removal of shoe constraints — with the goal of establishing a protocol that helps runners optimize their movement patterns and stay injury-free using their natural gait.</p>
     </div>
   </div>
 </div>
 
+<!-- MODAL — HACKATHON -->
 <div class="modal-overlay" id="modal-hackathon" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <p class="section-num" style="margin-bottom: 1rem;">Project 02</p>
-    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon ⎟ Finalist Mistral AI x GE Healthcare </h3>
+    <h3 class="modal-title">AI &amp; Healthcare Hackathon · Finalist — Mistral AI × GE Healthcare</h3>
     <div class="modal-text">
-      <p>Radiologists often spend too much time reviewing manually patient history and previous scans to draft current tumor reports, creating significant bottlenecks in the clinical workflow. For this hackathon, our goal was to build an AI-driven system that would assist radiologists in drafting MRI tumor reports while integrating easily into their existing routine.</p>
-      <p>Over 48 hours, competing against 23 teams, we designed and built a multi-agent AI workflow based on a long- and short-term memory and DICOM MRI scans. To differentiate our solution, I integrated a RAG pipeline strictly grounded in RECIST 1.1 medical guidelines. To guarantee a zero-hallucination environment for clinical use, we forced the LLM to output its responses exclusively in a structured JSON format, ensuring data integrity and consistency.</p>
-      <p>We successfully bridged the gap between agentic AI capabilities and strict medical compliance. Our app earned us a spot in the Top 8.</p>
+      <p>Radiologists often spend too much time reviewing patient history and previous scans to draft tumor reports, creating significant bottlenecks in clinical workflow. Our goal was to build an AI-driven system that assists radiologists in drafting MRI tumor reports while integrating easily into their existing routine.</p>
+      <p>Over 48 hours, competing against 23 teams, we designed and built a multi-agent AI workflow with long- and short-term memory and DICOM MRI scan processing. I integrated a RAG pipeline strictly grounded in RECIST 1.1 medical guidelines. To guarantee a zero-hallucination environment for clinical use, we forced the LLM to output responses exclusively in structured JSON format, ensuring data integrity and consistency.</p>
+      <p>We successfully bridged the gap between agentic AI capabilities and strict medical compliance — earning a spot in the Top 8.</p>
     </div>
   </div>
 </div>
@@ -550,12 +592,28 @@
 <script>
   function openModal(id) {
     document.getElementById(id).classList.add('active');
-    document.body.style.overflow = 'hidden'; 
+    document.body.style.overflow = 'hidden';
   }
   function closeModal(e) {
     document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
     document.body.style.overflow = 'auto';
   }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.tl-item, .fade').forEach(el => io.observe(el));
+
+  const sections = document.querySelectorAll('[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+    links.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : ''; });
+  });
 </script>
 </body>
 </html>
