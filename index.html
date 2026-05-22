@@ -129,11 +129,15 @@
     }
     .tl-item:last-child { border-bottom: 1px solid var(--line); }
 
-    .tl-right { padding-top: 0.3rem; text-align: right; }
+    .tl-right {
+      padding-top: 0.3rem; text-align: right;
+      display: flex; flex-direction: column;
+      align-items: flex-end; gap: 0.7rem;
+    }
     .tl-date {
       font-family: 'DM Mono', monospace; font-size: 0.95rem;
       color: var(--ink-2); letter-spacing: 0.05em;
-      margin-bottom: 1rem; white-space: nowrap;
+      white-space: nowrap;
     }
     .tl-badge {
       display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem;
@@ -143,19 +147,10 @@
     .tl-badge.edu   { background: var(--violet-lt);  color: var(--violet); }
     .tl-badge.award { background: #FEF3CD; color: #92600A; }
 
-    /* ── EDUCATION LOGO ROW ── */
-    .tl-org-row {
-      display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 0.8rem;
-    }
-
+    /* ── EDUCATION LOGO ── */
     .school-logo-img {
-      height: 44px;
-      width: auto;
-      max-width: 120px;
-      object-fit: contain;
-      display: block;
-      flex-shrink: 0;
+      height: 52px; width: auto; max-width: 140px;
+      object-fit: contain; display: block;
     }
 
     .tl-org {
@@ -334,6 +329,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
+  <a href="cv.pdf" class="nav-cta" download>Download CV</a>
 </nav>
 
 <!-- HERO -->
@@ -385,14 +381,12 @@
 
     <div class="tl-item">
       <div>
-        <div class="tl-org-row">
-          <img src="Imperial.png" alt="Imperial College London" class="school-logo-img">
-          <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
-        </div>
+        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
         <h3 class="tl-title">MSc Biomedical Engineering</h3>
         <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology · Machine Learning</p>
       </div>
       <div class="tl-right">
+        <img src="imperial-logo.png" alt="Imperial College London" class="school-logo-img">
         <p class="tl-date">Oct 2025 – Aug 2026</p>
         <span class="tl-badge edu">MSc</span>
       </div>
@@ -400,14 +394,12 @@
 
     <div class="tl-item">
       <div>
-        <div class="tl-org-row">
-          <img src="Centrale.png" alt="École Centrale de Lyon" class="school-logo-img">
-          <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
-        </div>
+        <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
         <h3 class="tl-title">MEng General Engineering</h3>
         <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · Materials Engineering · Computational Fluid Dynamics · Economics · Health Engineering</p>
       </div>
       <div class="tl-right">
+        <img src="ecl-logo.png" alt="École Centrale de Lyon" class="school-logo-img">
         <p class="tl-date">Sept 2022 – Aug 2026</p>
         <span class="tl-badge edu">MEng</span>
       </div>
