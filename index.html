@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Cécile Soudé — Biomedical & AI Engineer</title>
+  <title>Cécile Soudé — Biomedical and AI Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <style>
     /* ── DEEP TECH & HEALTH PALETTE ── */
     :root {
@@ -167,7 +167,6 @@
     /* ── ABOUT ── */
     .about-layout { max-width: 800px; margin: 0 auto; }
     .about-text {
-      /* Uniformisation : on utilise DM Sans pour le corps de texte */
       font-family: 'DM Sans', sans-serif;
       font-size: 1.2rem;
       font-weight: 300;
@@ -180,13 +179,22 @@
     /* ── TIMELINE ── */
     .timeline { display: flex; flex-direction: column; gap: 0; }
     .tl-item {
-      display: grid; grid-template-columns: 1fr 200px; gap: 3rem;
+      display: grid; grid-template-columns: 1fr 220px; gap: 3rem;
       padding: 3rem 0; border-top: 1px solid var(--line);
     }
     .tl-item:last-child { border-bottom: 1px solid var(--line); }
     
     .tl-right { padding-top: 0.3rem; text-align: right; }
-    .tl-date { font-family: 'DM Mono', monospace; font-size: 1rem; color: var(--ink-2); letter-spacing: 0.05em; margin-bottom: 1rem; }
+    
+    /* Force les dates sur une seule ligne */
+    .tl-date { 
+      font-family: 'DM Mono', monospace; 
+      font-size: 0.95rem; 
+      color: var(--ink-2); 
+      letter-spacing: 0.05em; 
+      margin-bottom: 1rem; 
+      white-space: nowrap; 
+    }
     
     .tl-badge {
       display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem;
@@ -196,7 +204,23 @@
     .tl-badge.edu { background: var(--violet-lt); color: var(--violet); }
     .tl-badge.award { background: #FEF3CD; color: #92600A; }
 
-    .tl-org { font-family: 'DM Mono', monospace; font-size: 1.15rem; font-weight: 500; color: var(--teal); margin-bottom: 0.6rem; }
+    /* Nouvelle typographie pour les noms d'écoles/entreprises et lieux */
+    .tl-org { 
+      font-family: 'DM Sans', sans-serif; 
+      font-size: 1rem; 
+      font-weight: 600; 
+      text-transform: uppercase;
+      color: var(--teal); 
+      letter-spacing: 0.05em;
+      margin-bottom: 0.6rem; 
+    }
+    .tl-loc {
+      color: var(--ink-3);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
     .tl-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
     .tl-desc { font-size: 1.05rem; color: var(--ink-2); line-height: 1.7; max-width: 650px; margin-bottom: 1.5rem; }
     .tl-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; }
@@ -217,19 +241,18 @@
     }
 
     .proj-vis {
-      width: 100%; height: 160px;
+      width: 100%; height: 180px;
       background: var(--line);
       margin-bottom: 1.5rem;
       position: relative;
       overflow: hidden;
       border: 1px solid rgba(0,0,0,0.05);
     }
-    /* Styles placeholders visuels scientifiques */
+    /* Dégradés temporaires en attendant tes vraies images */
     .vis-emg { background: repeating-linear-gradient(90deg, #E2E8F0, #E2E8F0 1px, transparent 1px, transparent 20px), linear-gradient(180deg, #F9F8F6, #F1F5F9); }
     .vis-cells { background: radial-gradient(circle at 30% 50%, rgba(15,118,110,0.1) 0%, transparent 60%), #F1F5F9; }
     
-    .proj-vis img { width: 100%; height: 100%; object-fit: cover; mix-blend-mode: multiply; opacity: 0.8; }
-    .proj-vis::after { content: 'Scientific Visual Placeholder'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-3); text-transform: uppercase; }
+    .proj-vis img { width: 100%; height: 100%; object-fit: cover; }
 
     .proj-num { font-family: 'DM Mono', monospace; font-size: 0.9rem; color: var(--ink-3); letter-spacing: 0.1em; margin-bottom: 1rem; }
     .proj-title { font-family: 'Fraunces', serif; font-size: 1.35rem; font-weight: 500; color: var(--ink); line-height: 1.4; margin-bottom: 0.8rem; }
@@ -247,7 +270,7 @@
     .now-list li { font-size: 1.05rem; color: var(--ink-2); margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
     .now-list li::before { content: '→'; position: absolute; left: 0; color: var(--teal); font-family: 'DM Mono', monospace; }
 
-    /* ── MODALS (CASE STUDIES) ── */
+    /* ── MODALS (POPUPS) ── */
     .modal-overlay {
       position: fixed; inset: 0; background: rgba(28,35,49,0.6);
       backdrop-filter: blur(8px); z-index: 999;
@@ -268,10 +291,23 @@
       background: none; border: none; font-size: 2rem;
       color: var(--ink-2); cursor: pointer; line-height: 1;
     }
+
+    .modal-hero-img {
+      width: 100%;
+      height: 250px;
+      background: var(--line);
+      margin-bottom: 2.5rem;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .modal-hero-img img { width: 100%; height: 100%; object-fit: cover; }
     
-    .star-block { margin-bottom: 2rem; }
-    .star-block h4 { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .star-block p { font-size: 1.05rem; color: var(--ink-2); line-height: 1.7; }
+    .modal-text p {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
 
     /* divider */
     .divider { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
@@ -306,10 +342,10 @@
 <section id="hero">
   <div class="hero-inner">
     <div>
-      <p class="hero-eyebrow">Bridging Computational Intelligence &amp; Life Sciences</p>
+      <p class="hero-eyebrow">Bridging Computational Intelligence and Life Sciences</p>
       <h1 class="hero-name">Cécile Soudé</h1>
       <div class="hero-rule"></div>
-      <p class="hero-headline">Biomedical &amp; AI Engineer</p>
+      <p class="hero-headline">Biomedical and AI Engineer</p>
       <p class="hero-sub">Translating intricate physiological and biochemical data into robust, clinical-grade machine learning frameworks.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Work</a>
@@ -352,7 +388,7 @@
   <div class="timeline">
     <div class="tl-item">
       <div>
-        <p class="tl-org">Imperial College London</p>
+        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
         <h3 class="tl-title">MSc Biomedical Engineering</h3>
         <p class="tl-desc">Machine Learning · Data Analysis · Human Neuromechanical Learning · Medical Devices · Computational Fluid Mechanics · Physiology</p>
       </div>
@@ -364,7 +400,7 @@
 
     <div class="tl-item">
       <div>
-        <p class="tl-org">École Centrale de Lyon</p>
+        <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
         <h3 class="tl-title">MEng General Engineering</h3>
         <p class="tl-desc">Mathematics · Computer Science · Image Processing · Mechanical Engineering · Health Engineering · CFD · Economics</p>
       </div>
@@ -387,8 +423,8 @@
   <div class="timeline">
     <div class="tl-item">
       <div>
-        <p class="tl-org">Imperial College London</p>
-        <h3 class="tl-title">MSc Thesis — Predictive Biomechanics &amp; Sensorimotor Learning</h3>
+        <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
+        <h3 class="tl-title">MSc Thesis — Predictive Biomechanics and Sensorimotor Learning</h3>
         <p class="tl-desc">Synchronized multimodal dataset (EMG, 3D Motion Capture, Force Plates) to model how a barefoot neuromuscular reset recalibrates CNS motor control, measuring the temporal decay of a sensorimotor aftereffect stride-by-stride.</p>
         <div class="tl-tags">
           <span class="tag">Python</span>
@@ -404,8 +440,8 @@
 
     <div class="tl-item">
       <div>
-        <p class="tl-org">Mistral AI × GE Healthcare</p>
-        <h3 class="tl-title">AI &amp; Healthcare Hackathon Finalist</h3>
+        <p class="tl-org">Mistral AI × GE Healthcare <span class="tl-loc">— Remote</span></p>
+        <h3 class="tl-title">AI and Healthcare Hackathon Finalist</h3>
         <p class="tl-desc">Developed a multi-agent RAG workflow grounded on RECIST 1.1 oncology guidelines for hallucination-free tumor MRI reports, paired with an XGBoost clinical triage system to optimize patient routing.</p>
         <div class="tl-tags">
           <span class="tag">Agentic AI</span>
@@ -418,10 +454,27 @@
         <span class="tl-badge award">Top 8 / 23</span>
       </div>
     </div>
+
+    <div class="tl-item">
+      <div>
+        <p class="tl-org">EMBL × UNSW Sydney <span class="tl-loc">— Sydney, Australia</span></p>
+        <h3 class="tl-title">Research Engineer — Computer Vision</h3>
+        <p class="tl-desc">Built a computer vision pipeline from scratch for Single-Particle Tracking in fluorescence microscopy. Achieved nanometer-scale localization accuracy under low SNR for Parkinson's disease diagnostics research.</p>
+        <div class="tl-tags">
+          <span class="tag">OpenCV</span>
+          <span class="tag">Python</span>
+          <span class="tag">Signal Proc.</span>
+        </div>
+      </div>
+      <div class="tl-right">
+        <p class="tl-date">Feb – Aug 2025</p>
+        <span class="tl-badge work">Research</span>
+      </div>
+    </div>
     
     <div class="tl-item">
       <div>
-        <p class="tl-org">Stryker</p>
+        <p class="tl-org">Stryker <span class="tl-loc">— Grenoble, France</span></p>
         <h3 class="tl-title">R&D Biomechanics Laboratory Intern</h3>
         <p class="tl-desc">Acted as the laboratory project anchor for an experimental testing campaign on reverse shoulder prostheses. Coordinated multi-department validation runs under strict FDA and EU MDR standards.</p>
         <div class="tl-tags">
@@ -452,7 +505,7 @@
       <p class="proj-num">01 — Thesis</p>
       <h3 class="proj-title">Neuromuscular Reset Analysis</h3>
       <p class="proj-desc">Synchronized multimodal biosignal dataset modeling error-based CNS recalibration and the temporal decay of a sensorimotor aftereffect.</p>
-      <button class="btn-link" onclick="openModal('modal-thesis')">Read Case Study →</button>
+      <button class="btn-link" onclick="openModal('modal-thesis')">View Details →</button>
     </div>
 
     <div class="proj-card">
@@ -461,7 +514,7 @@
       <p class="proj-num">02 — Hackathon</p>
       <h3 class="proj-title">Agentic AI for Oncology</h3>
       <p class="proj-desc">Multi-agent RAG workflow grounded on clinical guidelines for hallucination-free tumor MRI reports. Built for GE Healthcare.</p>
-      <button class="btn-link" onclick="openModal('modal-hackathon')">Read Case Study →</button>
+      <button class="btn-link" onclick="openModal('modal-hackathon')">View Details →</button>
     </div>
   </div>
 </div>
@@ -486,24 +539,16 @@
 <div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <p class="section-num" style="margin-bottom: 1rem;">Case Study 01</p>
-    <h3 class="section-title" style="margin-bottom: 2rem; font-size: 1.8rem;">Neuromuscular Reset Analysis</h3>
+    <p class="section-num" style="margin-bottom: 1rem;">Project 01</p>
+    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Neuromuscular Reset Analysis</h3>
     
-    <div class="star-block">
-      <h4>Situation</h4>
+    <div class="modal-hero-img">
+        </div>
+
+    <div class="modal-text">
       <p>Traditional biomechanical studies on barefoot running often lack high-fidelity temporal tracking to understand how quickly the Central Nervous System (CNS) recalibrates motor control after removing shoe constraints.</p>
-    </div>
-    <div class="star-block">
-      <h4>Task</h4>
-      <p>My objective was to measure and computationally model the exact temporal decay of this sensorimotor aftereffect, analyzing the recalibration stride-by-stride.</p>
-    </div>
-    <div class="star-block">
-      <h4>Action</h4>
-      <p>I designed a robust data pipeline using Python and MATLAB to synchronize high-frequency EMG signals, 3D optical motion capture data, and force plate kinetics. I then processed these raw inputs into an OpenSim musculoskeletal model to simulate internal joint moments.</p>
-    </div>
-    <div class="star-block">
-      <h4>Result</h4>
-      <p>Successfully mapped the error-based learning curve, providing quantitative biomechanical evidence of neuromuscular reset and establishing a replicable framework for future sensorimotor learning research.</p>
+      <p>To capture this, I designed a robust data pipeline using Python and MATLAB to synchronize high-frequency EMG signals, 3D optical motion capture data, and force plate kinetics. I then processed these raw inputs into an OpenSim musculoskeletal model to simulate internal joint moments.</p>
+      <p>This approach allowed me to successfully map the error-based learning curve, providing quantitative biomechanical evidence of neuromuscular reset and establishing a replicable framework for future sensorimotor learning research.</p>
     </div>
   </div>
 </div>
@@ -511,33 +556,24 @@
 <div class="modal-overlay" id="modal-hackathon" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <p class="section-num" style="margin-bottom: 1rem;">Case Study 02</p>
-    <h3 class="section-title" style="margin-bottom: 2rem; font-size: 1.8rem;">Agentic AI for Oncology Reporting</h3>
+    <p class="section-num" style="margin-bottom: 1rem;">Project 02</p>
+    <h3 class="section-title" style="margin-bottom: 2.5rem; font-size: 1.8rem;">Agentic AI for Oncology Reporting</h3>
     
-    <div class="star-block">
-      <h4>Situation</h4>
+    <div class="modal-hero-img">
+        </div>
+
+    <div class="modal-text">
       <p>Hospital oncology departments face massive bottlenecks in MRI reporting, often relying on traditional FIFO (First-In-First-Out) queues rather than prioritizing by clinical urgency and tumor progression.</p>
-    </div>
-    <div class="star-block">
-      <h4>Task</h4>
-      <p>For the GE Healthcare &amp; Mistral AI Hackathon, our team had 48 hours to build an AI-driven triaging and reporting system that physicians could trust, strictly adhering to RECIST 1.1 medical guidelines.</p>
-    </div>
-    <div class="star-block">
-      <h4>Action</h4>
-      <p>We engineered a multi-agent RAG workflow. While part of the team focused on the core LLM fine-tuning, I anchored the clinical logic—ensuring the ML architecture outputted structured, hallucination-free narratives. I also helped integrate an XGBoost Learning-to-Rank system for the triage queue.</p>
-    </div>
-    <div class="star-block">
-      <h4>Result</h4>
-      <p>Our proof-of-concept successfully bridged the gap between raw LLM capabilities and strict medical compliance, earning us a spot in the Top 8 out of 23 competing teams.</p>
+      <p>For the GE Healthcare and Mistral AI Hackathon, our team had 48 hours to build an AI-driven triaging and reporting system that physicians could trust, strictly adhering to RECIST 1.1 medical guidelines. While part of the team focused on the core LLM fine-tuning, I anchored the clinical logic—ensuring the ML architecture outputted structured, hallucination-free narratives.</p>
+      <p>We successfully engineered a multi-agent RAG workflow integrated with an XGBoost Learning-to-Rank system for the triage queue. This proof-of-concept bridged the gap between raw LLM capabilities and strict medical compliance, earning us a spot in the Top 8 out of 23 competing teams.</p>
     </div>
   </div>
 </div>
 
 <script>
-  // Script for Modals
   function openModal(id) {
     document.getElementById(id).classList.add('active');
-    document.body.style.overflow = 'hidden'; // Empêche de scroller la page derrière
+    document.body.style.overflow = 'hidden'; 
   }
   function closeModal(e) {
     document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
