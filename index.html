@@ -100,14 +100,16 @@
 
     /* ── COMPANY / SCHOOL LOGO ── */
     .org-logo {
-      height: 48px; width: auto; max-width: 140px;
+      width: auto; max-width: 140px;
       object-fit: contain; display: block;
-      /* fallback: show nothing if image missing */
     }
-    .org-logo-placeholder {
-      /* shown when no logo provided — invisible, takes no space */
-      display: none;
-    }
+    
+    .org-logo-sm { height: 48px; }
+    .org-logo-lg { height: 72px; }
+        .org-logo-placeholder {
+          /* shown when no logo provided — invisible, takes no space */
+          display: none;
+        }
 
     .tl-org { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--teal); letter-spacing: 0.05em; }
     .tl-loc { color: var(--ink-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
@@ -295,7 +297,7 @@
         <p class="tl-desc">Data Analysis and Statistics · Computational Fluid Mechanics · Biofluids · Molecular, Cell and Tissue Engineering · Human Neuromechanical Learning · Medical Devices Certification · Physiology</p>
       </div>
       <div class="tl-right">
-        <img src="Imperial.png" alt="Imperial College London" class="org-logo" onerror="this.style.display='none'">
+        <img src="Imperial.png" alt="Imperial" class="org-logo org-logo-sm" onerror="this.style.display='none'">
         <p class="tl-date">Oct 2025 – Aug 2026</p>
         <span class="tl-badge edu">MSc</span>
       </div>
@@ -308,7 +310,7 @@
         <p class="tl-desc">Mathematics · Computer Science · Image Processing · Physics · Mechanical Engineering · Computational Fluid Dynamics · Economics</p>
       </div>
       <div class="tl-right">
-        <img src="Centrale.png" alt="École Centrale de Lyon" class="org-logo" onerror="this.style.display='none'">
+        <img src="Centrale.png" alt="Centrale" class="org-logo org-logo-sm" onerror="this.style.display='none'">
         <p class="tl-date">Sept 2022 – Aug 2026</p>
         <span class="tl-badge edu">MEng</span>
       </div>
@@ -357,7 +359,7 @@
       </div>
       <div class="tl-right">
         <!-- Add embl-logo.png to your repo to show it here -->
-        <img src="embl-logo.png" alt="EMBL" class="org-logo" onerror="this.style.display='none'">
+        <img src="embl-logo.png" alt="EMBL" class="org-logo org-logo-lg" onerror="this.style.display='none'">
         <p class="tl-date">Feb – Aug 2025</p>
         <span class="tl-badge work">Research</span>
       </div>
@@ -377,7 +379,7 @@
       </div>
       <div class="tl-right">
         <!-- Add stryker-logo.png to your repo to show it here -->
-        <img src="stryker.png" alt="Stryker" class="org-logo" onerror="this.style.display='none'">
+        <img src="stryker-logo.png" alt="Stryker" class="org-logo org-logo-sm" onerror="this.style.display='none'">
         <p class="tl-date">May – Dec 2024</p>
         <span class="tl-badge work">Industry</span>
       </div>
@@ -513,8 +515,8 @@
         </div>
       </div>
       <div class="proj-body">
-        <p class="proj-num">Feb – Mar 2026 · Mistral AI × GE Healthcare</p>
-        <h3 class="proj-title">AI &amp; Healthcare Hackathon Finalist</h3>
+        <p class="proj-num">Feb – Mar 2026</p>
+        <h3 class="proj-title">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon Finalist · Mistral AI × GE Healthcare </h3>
         <p class="proj-desc">Built a <span class="hi">multi-agent AI workflow</span> to help radiologists generate accurate, hallucination-free MRI tumor reports grounded on RECIST 1.1 oncology guidelines.</p>
         <div class="proj-tags">
           <span class="tag">Agentic AI</span>
@@ -564,7 +566,7 @@
       <div class="modal-img-placeholder" style="display:none;"></div>
     </div>
     <div class="modal-body">
-      <h3 class="modal-title">AI &amp; Healthcare Hackathon · Finalist — Mistral AI × GE Healthcare</h3>
+      <h3 class="modal-title">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Healthcare Hackathon Finalist · Mistral AI × GE Healthcare</h3>
       <div class="modal-text">
         <p>Radiologists often spend too much time reviewing patient history and previous scans to draft tumor reports, creating significant bottlenecks in clinical workflow. Our goal was to build an AI-driven system that assists radiologists in drafting MRI tumor reports while integrating easily into their existing routine.</p>
         <p>Over 48 hours, competing against 23 teams, we designed and built a multi-agent AI workflow with long- and short-term memory and DICOM MRI scan processing. I integrated a RAG pipeline strictly grounded in RECIST 1.1 medical guidelines. To guarantee a zero-hallucination environment for clinical use, we forced the LLM to output responses exclusively in structured JSON format.</p>
