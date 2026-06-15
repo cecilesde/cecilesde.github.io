@@ -481,7 +481,7 @@
   </div>
 </div>
 
-<!-- PROJECTS — replace everything between the two divider comments in your site -->
+<!-- PROJECTS -->
 <div class="divider"><hr></div>
 <div class="section-wrap" id="projects">
   <div class="section-header">
@@ -563,7 +563,7 @@
   </div>
 </div>
  
-<!-- MODALS — replace your existing modals with these -->
+<!-- MODALS -->
  
 <!-- MODAL THESIS -->
 <div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
@@ -602,5 +602,29 @@
     </div>
   </div>
 </div>
-</body>
+
+<!-- FOOTER -->
+<div class="divider"><hr></div>
+<footer style="padding: 2.5rem 4rem; text-align: center; color: var(--ink-3); font-family: 'DM Mono', monospace; font-size: 0.85rem;">
+  © 2026 Cécile Soudé · All rights reserved.
+</footer>
+
+<script>
+  function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closeModal(e) { document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active')); document.body.style.overflow = 'auto'; }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.tl-item, .fade').forEach(el => io.observe(el));
+
+  const sections = document.querySelectorAll('[id]');
+  const links = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+    links.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : ''; });
+  });
+</script>
 </html>
