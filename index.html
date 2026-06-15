@@ -488,91 +488,80 @@
     <h2 class="section-title">Projects</h2>
     <div class="section-line"></div>
   </div>
+ 
   <div class="projects-grid fade">
  
     <!-- PROJECT 1 — THESIS -->
-    <div class="proj-card c1">
-      <div class="proj-img-wrap">
-        <img src="thesis.png" alt="Barefoot Running Thesis"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="proj-img-placeholder" style="display:none;"><span>thesis.png</span></div>
+    <div class="proj-card">
+      <div class="proj-meta">
+        <div class="proj-dot"></div>
+        <span class="proj-num">MSc Thesis · Imperial</span>
       </div>
-      <div class="proj-body">
-        <p class="proj-num">Imperial College London · 2026</p>
-        <h3 class="proj-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
-        <p class="proj-desc">Multimodal pipeline (EMG, motion capture, force plates) to quantify how brief barefoot running recalibrates shod mechanics and reduces injury risk.</p>
-        <div class="proj-tags">
-          <span class="tag">Python</span>
-          <span class="tag">MATLAB</span>
-          <span class="tag">OpenSim</span>
-          <span class="tag">Time-Series</span>
-        </div>
-        <div style="display:flex; gap: 1rem; margin-top: auto; padding-top: 1rem;">
-          <button class="btn-link" onclick="openModal('modal-thesis')">Details →</button>
-        </div>
+      <h3 class="proj-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
+      <p class="proj-desc">Multimodal pipeline (EMG, motion capture, force plates) quantifying how barefoot running recalibrates shod mechanics and reduces injury risk.</p>
+      <div class="proj-tags">
+        <span class="tag tag-t">Python</span>
+        <span class="tag tag-t">OpenSim</span>
+        <span class="tag">MATLAB</span>
+        <span class="tag">Time-Series</span>
+      </div>
+      <div class="proj-footer">
+        <button class="btn-link" onclick="openModal('modal-thesis')">Details →</button>
+        <span class="proj-year">2026</span>
       </div>
     </div>
  
     <!-- PROJECT 2 — HACKATHON -->
-    <div class="proj-card c2">
-      <div class="proj-img-wrap">
-        <img src="hackathon.png" alt="AI Healthcare Hackathon"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="proj-img-placeholder" style="display:none;"><span>hackathon.png</span></div>
+    <div class="proj-card">
+      <div class="proj-meta">
+        <div class="proj-dot violet"></div>
+        <span class="proj-num">Hackathon · Top 8 / 23</span>
       </div>
-      <div class="proj-body">
-        <p class="proj-num">Mistral AI × GE Healthcare · 2026 · Top 8 / 23</p>
-        <h3 class="proj-title">AI Tumour Reporting — Hallucination-Free MRI Reports</h3>
-        <p class="proj-desc">Multi-agent workflow grounding LLMs on RECIST 1.1 oncology guidelines to generate structured, hallucination-free radiology reports.</p>
-        <div class="proj-tags">
-          <span class="tag">Agentic AI</span>
-          <span class="tag">RAG</span>
-          <span class="tag">LLMs</span>
-          <span class="tag">XGBoost</span>
-        </div>
-        <div style="display:flex; gap: 1rem; margin-top: auto; padding-top: 1rem;">
-          <button class="btn-link" onclick="openModal('modal-hackathon')">Details →</button>
-        </div>
+      <h3 class="proj-title">AI Tumour Reporting — Hallucination-Free MRI Reports</h3>
+      <p class="proj-desc">Multi-agent workflow grounding LLMs on RECIST 1.1 oncology guidelines to generate structured, hallucination-free radiology reports.</p>
+      <div class="proj-tags">
+        <span class="tag tag-v">Agentic AI</span>
+        <span class="tag tag-v">RAG</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">XGBoost</span>
+      </div>
+      <div class="proj-footer">
+        <button class="btn-link" onclick="openModal('modal-hackathon')">Details →</button>
+        <span class="proj-year">2026</span>
       </div>
     </div>
  
-    <!-- PROJECT 3 — ONCOLOGY GITHUB -->
-    <div class="proj-card c1">
-      <div class="proj-img-wrap">
-        <div class="proj-img-placeholder" style="display:flex; background: linear-gradient(135deg, #CCFBF1, #E0E7FF);">
-          <span>oncology-survival.png</span>
-        </div>
+    <!-- PROJECT 3 — ONCOLOGY -->
+    <div class="proj-card">
+      <div class="proj-meta">
+        <div class="proj-dot"></div>
+        <span class="proj-num">Personal Project · TCGA</span>
       </div>
-      <div class="proj-body">
-        <p class="proj-num">Personal Project · 2026</p>
-        <h3 class="proj-title">Oncology Survival Analysis — TCGA Lung Adenocarcinoma</h3>
-        <p class="proj-desc">Survival analysis and ML-based mortality prediction on 566 LUAD patients. Kaplan-Meier, Cox regression, KRAS/STK11/KEAP1 co-mutation analysis, XGBoost.</p>
-        <div class="proj-tags">
-          <span class="tag">Python</span>
-          <span class="tag">lifelines</span>
-          <span class="tag">XGBoost</span>
-          <span class="tag">TCGA</span>
-          <span class="tag">Survival Analysis</span>
-        </div>
-        <div style="display:flex; gap: 1rem; margin-top: auto; padding-top: 1rem;">
-          <a href="https://github.com/cecilesde/oncology-survival-analysis" target="_blank" class="btn-link">GitHub →</a>
-        </div>
+      <h3 class="proj-title">Oncology Survival Analysis — LUAD</h3>
+      <p class="proj-desc">Kaplan-Meier, Cox regression, KRAS/STK11/KEAP1 co-mutation analysis and XGBoost mortality prediction on 566 patients.</p>
+      <div class="proj-tags">
+        <span class="tag tag-t">Survival Analysis</span>
+        <span class="tag tag-t">lifelines</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">TCGA</span>
+      </div>
+      <div class="proj-footer">
+        <a href="https://github.com/cecilesde/oncology-survival-analysis" target="_blank" class="btn-link">GitHub →</a>
+        <span class="proj-year">2026</span>
       </div>
     </div>
  
   </div>
 </div>
  
-<!-- MODALS -->
  
-<!-- MODAL THESIS -->
+<!-- =================================================
+     MODALS — paste these to replace your old modals
+     ================================================= -->
+ 
 <div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <div class="modal-img-wrap contain">
-      <img src="thesis.png" alt="Thesis" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="modal-img-placeholder" style="display:none;"></div>
-    </div>
     <div class="modal-body">
       <h3 class="modal-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
       <div class="modal-text">
@@ -584,18 +573,13 @@
   </div>
 </div>
  
-<!-- MODAL HACKATHON -->
 <div class="modal-overlay" id="modal-hackathon" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
-    <div class="modal-img-wrap">
-      <img src="hackathon.png" alt="Hackathon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="modal-img-placeholder" style="display:none;"></div>
-    </div>
     <div class="modal-body">
       <h3 class="modal-title">AI Tumour Reporting · Mistral AI × GE Healthcare</h3>
       <div class="modal-text">
-        <p>48-hour hackathon. Built a multi-agent AI workflow to help radiologists generate hallucination-free MRI tumour reports strictly grounded on RECIST 1.1 oncology guidelines.</p>
+        <p>48-hour hackathon. Multi-agent AI workflow helping radiologists generate hallucination-free MRI tumour reports grounded on RECIST 1.1 oncology guidelines.</p>
         <p>RAG pipeline forcing structured JSON output to guarantee zero hallucinations in a clinical setting. Predictive triage model using XGBoost and Learning-to-Rank to optimise patient flow.</p>
         <p>Top 8 out of 23 teams.</p>
       </div>
