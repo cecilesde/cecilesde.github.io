@@ -157,74 +157,34 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
 
     /* ── PROJECTS ── */
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem; }
-
-    .proj-card {
-      background: white; display: flex; flex-direction: column;
-      border: 1px solid var(--line); position: relative;
-      transition: box-shadow 0.2s, transform 0.2s;
-      overflow: hidden;
-    }
-    .proj-card:hover { box-shadow: 0 8px 32px rgba(28,35,49,0.08); transform: translateY(-3px); }
-
-    /* coloured top bar on hover */
-    .proj-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; z-index: 2;
-    }
-    .proj-card.c1::before { background: var(--teal); }
-    .proj-card.c2::before { background: var(--violet); }
-    .proj-card:hover::before { transform: scaleX(1); }
-
-    /* ── PROJECT IMAGE ── */
-    .proj-img-wrap {
-      width: 100%; height: 180px;
-      overflow: hidden; background: var(--line);
-      flex-shrink: 0; position: relative;
-    }
-    .proj-img-wrap img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block; transition: transform 0.4s ease;
-    }
-    .proj-img-wrap.contain img {
-      object-fit: contain;
-      padding: 1rem;
-      background: #F1F5F9;
-    }
-    
-    .proj-card:hover .proj-img-wrap img { transform: scale(1.04); }
-
-    /* placeholder shown when no image */
-    .proj-img-placeholder {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, var(--teal-light), var(--violet-lt));
-    }
-    .proj-img-placeholder span {
-      font-family: 'DM Mono', monospace; font-size: 0.7rem;
-      color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase;
-    }
-
-    .proj-body { padding: 2rem; display: flex; flex-direction: column; flex: 1; }
-    .proj-num { font-family: 'DM Mono', monospace; font-size: 0.85rem; color: var(--ink-3); letter-spacing: 0.05em; margin-bottom: 0.8rem; }
-    .proj-title { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 0.8rem; }
-    .proj-desc { font-size: 1rem; color: var(--ink-2); line-height: 1.6; margin-bottom: 1.5rem; flex-grow: 1; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-    .btn-link { background: none; border: none; padding: 0; font-family: 'DM Mono', monospace; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); cursor: pointer; text-decoration: none; align-self: flex-start; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
-    .btn-link:hover { border-color: var(--teal); }
-
+    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .proj-card { position: relative; height: 220px; overflow: hidden; cursor: pointer; background: var(--line); }
+    .proj-card-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.92); }
+    .proj-card:hover .proj-card-img { transform: scale(1.05); }
+    .proj-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; }
+    .proj-placeholder.p1 { background: linear-gradient(135deg, var(--teal-light), #85B7EB); }
+    .proj-placeholder.p2 { background: linear-gradient(135deg, var(--violet-lt), #F4C0D1); }
+    .proj-placeholder.p3 { background: linear-gradient(135deg, var(--teal-light), #9FE1CB); }
+    .proj-label { position: absolute; top: 12px; right: 12px; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; }
+    .proj-label.teal { background: var(--teal-light); color: var(--teal); }
+    .proj-label.violet { background: var(--violet-lt); color: var(--violet); }
+    .proj-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.82); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; opacity: 0; transition: opacity 0.25s ease; }
+    .proj-card:hover .proj-overlay { opacity: 1; }
+    .proj-overlay-meta { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+    .proj-overlay-title { font-size: 0.9rem; font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 8px; }
+    .proj-overlay-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+    .proj-overlay-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 6px; border: 0.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
+    .proj-overlay-tag.teal { background: rgba(15,118,110,0.5); border-color: rgba(15,118,110,0.6); }
+    .proj-overlay-tag.violet { background: rgba(67,56,202,0.5); border-color: rgba(67,56,202,0.6); }
+    .btn-link { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5DCAA5; text-decoration: none; background: none; border: none; padding: 0; cursor: pointer; align-self: flex-start; }
+    .btn-link:hover { text-decoration: underline; }
+     
     /* ── MODALS ── */
     .modal-overlay { position: fixed; inset: 0; background: rgba(28,35,49,0.6); backdrop-filter: blur(8px); z-index: 999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
     .modal-overlay.active { opacity: 1; pointer-events: auto; }
     .modal-content { background: var(--bg); width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto; position: relative; border: 1px solid var(--line); transform: translateY(20px); transition: transform 0.3s ease; }
     .modal-overlay.active .modal-content { transform: translateY(0); }
     .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 2rem; color: var(--ink-2); cursor: pointer; line-height: 1; z-index: 2; }
-
-    /* modal image */
-    .modal-img-wrap { width: 100%; height: 220px; overflow: hidden; background: var(--line); flex-shrink: 0; }
-    .modal-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .modal-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--teal-light), var(--violet-lt)); }
-
     .modal-body { padding: 3rem 4rem; }
     .modal-title { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin-bottom: 2rem; line-height: 1.3; }
     .modal-text p { font-size: 1.05rem; color: var(--ink-2); line-height: 1.8; margin-bottom: 1.5rem; }
@@ -493,72 +453,65 @@
  
     <!-- PROJECT 1 — THESIS -->
     <div class="proj-card">
-      <div class="proj-meta">
-        <div class="proj-dot"></div>
-        <span class="proj-num">MSc Thesis · Imperial</span>
-      </div>
-      <h3 class="proj-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
-      <p class="proj-desc">Multimodal pipeline (EMG, motion capture, force plates) quantifying how barefoot running recalibrates shod mechanics and reduces injury risk.</p>
-      <div class="proj-tags">
-        <span class="tag tag-t">Python</span>
-        <span class="tag tag-t">OpenSim</span>
-        <span class="tag">MATLAB</span>
-        <span class="tag">Time-Series</span>
-      </div>
-      <div class="proj-footer">
+      <img src="thesis.png" alt="Barefoot Running Thesis" class="proj-card-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p1" style="display:none;">thesis.png</div>
+      <span class="proj-label teal">MSc · 2026</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">Imperial College London</div>
+        <div class="proj-overlay-title">Barefoot Running as a Neuromuscular Warm-Up</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag teal">Python</span>
+          <span class="proj-overlay-tag teal">OpenSim</span>
+          <span class="proj-overlay-tag">MATLAB</span>
+          <span class="proj-overlay-tag">Time-Series</span>
+        </div>
         <button class="btn-link" onclick="openModal('modal-thesis')">Details →</button>
-        <span class="proj-year">2026</span>
       </div>
     </div>
  
     <!-- PROJECT 2 — HACKATHON -->
     <div class="proj-card">
-      <div class="proj-meta">
-        <div class="proj-dot violet"></div>
-        <span class="proj-num">Hackathon · Top 8 / 23</span>
-      </div>
-      <h3 class="proj-title">AI Tumour Reporting — Hallucination-Free MRI Reports</h3>
-      <p class="proj-desc">Multi-agent workflow grounding LLMs on RECIST 1.1 oncology guidelines to generate structured, hallucination-free radiology reports.</p>
-      <div class="proj-tags">
-        <span class="tag tag-v">Agentic AI</span>
-        <span class="tag tag-v">RAG</span>
-        <span class="tag">LLMs</span>
-        <span class="tag">XGBoost</span>
-      </div>
-      <div class="proj-footer">
+      <img src="hackathon.png" alt="AI Healthcare Hackathon" class="proj-card-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p2" style="display:none;">hackathon.png</div>
+      <span class="proj-label violet">Top 8 / 23</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">Mistral AI × GE Healthcare</div>
+        <div class="proj-overlay-title">AI Tumour Reporting — Hallucination-Free MRI Reports</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag violet">Agentic AI</span>
+          <span class="proj-overlay-tag violet">RAG</span>
+          <span class="proj-overlay-tag">LLMs</span>
+          <span class="proj-overlay-tag">XGBoost</span>
+        </div>
         <button class="btn-link" onclick="openModal('modal-hackathon')">Details →</button>
-        <span class="proj-year">2026</span>
       </div>
     </div>
  
     <!-- PROJECT 3 — ONCOLOGY -->
     <div class="proj-card">
-      <div class="proj-meta">
-        <div class="proj-dot"></div>
-        <span class="proj-num">Personal Project · TCGA</span>
-      </div>
-      <h3 class="proj-title">Oncology Survival Analysis — LUAD</h3>
-      <p class="proj-desc">Kaplan-Meier, Cox regression, KRAS/STK11/KEAP1 co-mutation analysis and XGBoost mortality prediction on 566 patients.</p>
-      <div class="proj-tags">
-        <span class="tag tag-t">Survival Analysis</span>
-        <span class="tag tag-t">lifelines</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">TCGA</span>
-      </div>
-      <div class="proj-footer">
+      <img src="km_by_stage.png" alt="Oncology Survival Analysis" class="proj-card-img"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p3" style="display:none;">km_by_stage.png</div>
+      <span class="proj-label teal">Personal · 2026</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">TCGA · 566 patients</div>
+        <div class="proj-overlay-title">Oncology Survival Analysis — LUAD</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag teal">Survival Analysis</span>
+          <span class="proj-overlay-tag teal">lifelines</span>
+          <span class="proj-overlay-tag">XGBoost</span>
+          <span class="proj-overlay-tag">TCGA</span>
+        </div>
         <a href="https://github.com/cecilesde/oncology-survival-analysis" target="_blank" class="btn-link">GitHub →</a>
-        <span class="proj-year">2026</span>
       </div>
     </div>
  
   </div>
 </div>
  
- 
-<!-- =================================================
-     MODALS — paste these to replace your old modals
-     ================================================= -->
- 
+<!-- MODAL THESIS -->
 <div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
@@ -573,6 +526,7 @@
   </div>
 </div>
  
+<!-- MODAL HACKATHON -->
 <div class="modal-overlay" id="modal-hackathon" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
