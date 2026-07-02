@@ -158,7 +158,7 @@
       <h1 class="hero-name">Cécile Soudé</h1>
       <div class="hero-rule"></div>
       <p class="hero-headline">Biomedical &amp; AI Engineer</p>
-      <p class="hero-sub">Building multi-agent AI systems at the intersection of machine learning and drug discovery — where the biology is as hard as the engineering.</p>
+      <p class="hero-sub">Using my engineering skills to solve real clinical challenges and make a meaningful impact on healthcare.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Work</a>
         <a href="https://github.com/cecilesde" target="_blank" class="btn-ghost">GitHub</a>
@@ -182,10 +182,9 @@
   </div>
   <div class="about-layout fade">
     <p class="about-text">
-      MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from École Centrale de Lyon</strong>. My work sits at the intersection of applied ML and drug discovery — building systems where the data is messy, the biology is complex, and getting it right actually matters for patients.<br><br>
-      From <span class="hi">single-particle tracking</span> in fluorescence microscopy at EMBL to <span class="hi">multi-agent clinical trial attrition prediction</span> powered by the Amass API, I care about building tools that accelerate scientific discovery — not just optimising benchmarks.<br><br>
-      <span class="hi">Sports lover</span>, black belt judoka, conservatory guitarist, and firm believer that maths and biology together can change medicine.
-    </p>
+      MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>. I've had the opportunity to work across both academic research and a leading MedTech company, which allowed me to see the healthcare industry from different angles.<br><br>
+      Right now, I apply machine learning to accelerate drug discovery, focused on turning biological data into actionable therapeutic insights that can directly improve patient outcomes.
+      </p>
   </div>
 </div>
 
@@ -244,9 +243,8 @@
     <div class="tl-item">
       <div>
         <p class="tl-org">EMBL Australia × UNSW <span class="tl-loc">— Sydney, Australia</span></p>
-        <h3 class="tl-title">Research Engineer — Computer Vision &amp; Single-Molecule Science</h3>
+        <h3 class="tl-title">Research Engineer — Computer Vision <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Single-Molecule Science</h3>
         <p class="tl-desc">Built a computer vision pipeline from scratch for <span style="color:var(--teal);font-weight:500">single-particle tracking and bacterial growth kinetics</span>. Used Gaussian fitting, noise filtering, and subpixel refinement to overcome low SNR in fluorescence microscopy, achieving nanometer-scale localisation accuracy.<br><br>
-        Spent more time correcting photobleaching artifacts and calibrating microscope parameters than building the tracking algorithm itself — which taught me that data quality is always the first hard problem in biology.<br><br>
         Upgraded diagnostic equipment for Parkinson's disease research with an integrated control system and UI.</p>
         <div class="tl-tags">
           <span class="tag tag-t">OpenCV</span>
@@ -267,7 +265,7 @@
     <div class="tl-item">
       <div>
         <p class="tl-org">Stryker <span class="tl-loc">— Grenoble, France</span></p>
-        <h3 class="tl-title">R&amp;D Biomechanics Test Laboratory Intern</h3>
+        <h3 class="tl-title">R<span style="font-family:'DM Sans',sans-serif">&amp;</span>D Biomechanics Test Laboratory Intern</h3>
         <p class="tl-desc">Project manager for a research testing campaign on reverse shoulder prostheses. Assessed how bone substitute materials affect implant performance. Led validations within a COFRAC-accredited lab under FDA and EU MDR compliance.</p>
         <div class="tl-tags">
           <span class="tag tag-v">Project Management</span>
@@ -346,7 +344,7 @@
       </div>
     </div>
     <div>
-      <p class="skills-row-label">Beyond the screen</p>
+      <p class="skills-row-label">Hobbies</p>
       <div class="beyond-grid">
         <div class="beyond-card">
           <span class="beyond-icon">🥋</span>
@@ -381,20 +379,38 @@
   </div>
   <div class="projects-grid fade">
 
-    <!-- AttritionAI -->
+    <!-- Build an AI Scientist Hackathon -->
     <div class="proj-card">
-      <div class="proj-placeholder p1">AttritionAI</div>
-      <span class="proj-label teal">Hackathon · 2026</span>
+      <div class="proj-placeholder p1">AI Scientist</div>
+      <span class="proj-label amber">Hackathon · Jul 2026</span>
       <div class="proj-overlay">
-        <div class="proj-overlay-meta">Anthropic × TernaryTx · Selected 100/700</div>
-        <div class="proj-overlay-title">AttritionAI — Clinical Trial Attrition Predictor</div>
+        <div class="proj-overlay-meta">Anthropic × TernaryTx × future.bio · 100/700</div>
+        <div class="proj-overlay-title">Build an AI Scientist</div>
         <div class="proj-overlay-tags">
-          <span class="proj-overlay-tag teal">5-Agent Pipeline</span>
+          <span class="proj-overlay-tag teal">Multi-Agent</span>
+          <span class="proj-overlay-tag teal">Claude API</span>
+          <span class="proj-overlay-tag">Boltz</span>
+          <span class="proj-overlay-tag">Amass Platform</span>
+          <span class="proj-overlay-tag">Drug Discovery</span>
+        </div>
+        <button class="btn-link" onclick="openModal('modal-hackathon-ternary')">Details →</button>
+      </div>
+    </div>
+ 
+    <!-- Clinical Trial Attrition Pipeline -->
+    <div class="proj-card">
+      <div class="proj-placeholder p3">5-Agent Pipeline</div>
+      <span class="proj-label teal">Personal · Jul 2026</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">Google AI co-scientist pattern</div>
+        <div class="proj-overlay-title">Clinical Trial Attrition — 5-Agent Pipeline</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag teal">5 Agents</span>
           <span class="proj-overlay-tag teal">Amass API</span>
           <span class="proj-overlay-tag">Claude CLI</span>
           <span class="proj-overlay-tag">Streamlit</span>
         </div>
-        <button class="btn-link" onclick="openModal('modal-attrition')">Details →</button>
+        <a href="https://github.com/cecilesde/target-discovery-agents" target="_blank" class="btn-link">GitHub →</a>
       </div>
     </div>
 
@@ -475,18 +491,15 @@
   </div>
 </div>
 
-<!-- MODAL AttritionAI -->
-<div class="modal-overlay" id="modal-attrition" onclick="closeModal(event)">
+!-- MODAL TernaryTx Hackathon -->
+<div class="modal-overlay" id="modal-hackathon-ternary" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <div class="modal-body">
-      <h3 class="modal-title">AttritionAI — Clinical Trial Attrition Predictor</h3>
+      <h3 class="modal-title">Build an AI Scientist · Anthropic × TernaryTx</h3>
       <div class="modal-text">
-        <p>Selected among 700 applicants (100 participants) at the Anthropic × TernaryTx "Building an AI Scientist" Hackathon, July 2026.</p>
-        <p>Built a 5-agent LLM pipeline following the Google AI co-scientist pattern (generate → reflect → critique → synthesise → refine) that predicts clinical trial failure mode — Safety vs. Efficacy — for a given gene target and disease.</p>
-        <p>Technical details: parallel Agent 1/2 execution via concurrent.futures; structured JSON schema enforcement between agents for hallucination prevention; Adversarial Critic with confidence scoring; Targeted Refiner re-searching open questions from the Synthesizer output.</p>
-        <p>Data layer: Amass Platform REST API (TrialCore, BiomedCore, GeneCore, DrugCore), single-fetch upfront architecture. Stack: Claude Code CLI, Python, Streamlit.</p>
-        <p><a href="https://github.com/cecilesde/target-discovery-agents" target="_blank" style="color:var(--teal)">github.com/cecilesde/target-discovery-agents →</a></p>
+        <p>Selected among 700 applicants (100 participants) at the TernaryTx × Anthropic "Building an AI Scientist" Hackathon, London, July 2026. Co-organised by 50Y, a deep-tech entrepreneur accelerator.<p>
+        <p>48-hour hackathon building a multi-agent AI pipeline for drug target discovery, powered by the Claude API, Boltz API and the Amass Platform life science intelligence layer.</p>
       </div>
     </div>
   </div>
