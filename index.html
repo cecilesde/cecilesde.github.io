@@ -10,201 +10,129 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg:        #F9F8F6;
-      --bg-card:   #F9F8F6;
-      --ink:       #1C2331;
-      --ink-2:     #475569;
-      --ink-3:     #94A3B8;
-      --line:      #E2E8F0;
-      --teal:      #0F766E;
-      --teal-light:#CCFBF1;
-      --violet:    #4338CA;
-      --violet-lt: #E0E7FF;
-      --tag-bg:    #F1F5F9;
+      --bg:#F9F8F6;--bg-card:#F9F8F6;--ink:#1C2331;--ink-2:#475569;--ink-3:#94A3B8;
+      --line:#E2E8F0;--teal:#0F766E;--teal-light:#CCFBF1;--violet:#4338CA;--violet-lt:#E0E7FF;--tag-bg:#F1F5F9;
     }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.4rem 4rem;
-      background: rgba(249,248,246,0.88); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .nav-logo { font-family: 'DM Mono', monospace; font-size: 0.9rem; letter-spacing: 0.1em; color: var(--ink); text-transform: uppercase; font-weight: 500; }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-2); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-cta {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.85rem;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #fff;
-      background: var(--teal);
-      text-decoration: none;
-      padding: 0.5rem 1.2rem;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--ink); }
-
-    /* ── HERO ── */
-    #hero { min-height: 100vh; display: flex; align-items: center; max-width: 1000px; margin: 0 auto; padding: 8rem 2rem 4rem; }
-    .hero-inner { display: grid; grid-template-columns: 1fr 300px; gap: 5rem; align-items: center; width: 100%; }
-    .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.85rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 1.4rem; }
-    .hero-name { font-family: 'Fraunces', serif; font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 400; line-height: 1.0; letter-spacing: -0.02em; color: var(--ink); white-space: nowrap; }
-    .hero-rule { width: 3rem; height: 2px; background: var(--teal); margin: 2rem 0; }
-    .hero-headline { font-size: 1.25rem; font-weight: 500; color: var(--ink-2); margin-bottom: 0.5rem; }
-    .hero-sub { font-size: 1.05rem; color: var(--ink-2); max-width: 500px; line-height: 1.8; }
-    .hero-actions { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; align-items: center; }
-
-    .btn-primary, .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.85rem 1.8rem; font-family: 'DM Mono', monospace; font-size: 0.85rem;
-      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none;
-    }
-    .btn-primary { background: var(--teal); color: #fff; }
-    .btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
-    .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink-3); }
-    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
-
-    .profile-frame { width: 300px; height: 380px; position: relative; }
-    .profile-frame::after { content: ''; position: absolute; top: 15px; left: 15px; right: -15px; bottom: -15px; border: 1px solid var(--teal); z-index: -1; }
-    .profile-img { width: 100%; height: 100%; object-fit: cover; display: block; filter: contrast(1.05); }
-
-    /* ── SECTIONS ── */
-    .section-wrap { max-width: 900px; margin: 0 auto; padding: 7rem 2rem; }
-    .section-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 4rem; }
-    .section-title { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 400; color: var(--ink); letter-spacing: -0.01em; }
-    .section-line { flex: 1; height: 1px; background: var(--line); }
-
-    /* ── ABOUT ── */
-    .about-layout { max-width: 800px; }
-    .about-text { font-family: 'DM Sans', sans-serif; font-size: 1.2rem; font-weight: 300; line-height: 1.85; color: var(--ink-2); }
-    .about-text strong { color: var(--ink); font-weight: 500; }
-    .about-text .hi { color: var(--teal); font-weight: 500; }
-
-    /* ── TIMELINE ── */
-    .timeline { display: flex; flex-direction: column; }
-    .tl-item {
-      display: grid; grid-template-columns: 1fr 240px;
-      gap: 3rem; padding: 3rem 0; border-top: 1px solid var(--line);
-      opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .tl-item:last-child { border-bottom: 1px solid var(--line); }
-    .tl-item.visible { opacity: 1; transform: none; }
-
-    /* ── RIGHT COLUMN ── */
-    .tl-right {
-      padding-top: 0.3rem; text-align: right;
-      display: flex; flex-direction: column;
-      align-items: flex-end; gap: 0.8rem;
-    }
-    .tl-date { font-family: 'DM Mono', monospace; font-size: 0.95rem; color: var(--ink-2); letter-spacing: 0.05em; white-space: nowrap; }
-    .tl-badge { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.7rem; }
-    .tl-badge.work  { background: var(--teal-light); color: var(--teal); }
-    .tl-badge.edu   { background: var(--violet-lt);  color: var(--violet); }
-    .tl-badge.award { background: #FEF3CD; color: #92600A; }
-
-    /* ── COMPANY / SCHOOL LOGO ── */
-    .org-logo {
-      width: auto; max-width: 140px;
-      object-fit: contain; display: block;
-    }
-    
-    .org-logo-sm { height: 48px; }
-    .org-logo-lg { height: 72px; }
-        .org-logo-placeholder {
-          /* shown when no logo provided — invisible, takes no space */
-          display: none;
-        }
-
-    .tl-org { font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600; text-transform: uppercase; color: var(--teal); letter-spacing: 0.05em; }
-    .tl-loc { color: var(--ink-3); font-weight: 400; text-transform: none; letter-spacing: 0; }
-    .tl-title { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; line-height: 1.3; }
-    .tl-desc { font-size: 1.05rem; color: var(--ink-2); line-height: 1.75; max-width: 100%; margin-bottom: 1.5rem; }
-
-    /* ── TAGS ── */
-    .tag { font-family: 'DM Mono', monospace; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.4rem 0.8rem; background: white; color: var(--ink-2); border: 1px solid var(--line); }
-    .tl-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag-t { background: var(--teal-light); color: var(--teal); border-color: rgba(15,118,110,0.2); }
-    .tag-v { background: var(--violet-lt); color: var(--violet); border-color: rgba(67,56,202,0.2); }
-
-    /* ── SKILLS ── */
-    .skills-layout { display: flex; flex-direction: column; gap: 3rem; }
-    .skills-row-label { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 1.6rem; display: flex; align-items: center; gap: 1rem; }
-    .skills-row-label::after { content: ''; flex: 1; height: 1px; background: var(--line); }
-    .tech-strip { display: flex; flex-direction: column; gap: 1.2rem; }
-    .tech-row { display: flex; align-items: baseline; gap: 1.5rem; flex-wrap: wrap; }
-    .tech-row-label { font-family: 'DM Sans', sans-serif; font-size: 0.82rem; font-weight: 500; color: var(--ink); min-width: 130px; flex-shrink: 0; }
-    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .beyond-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-    .beyond-card { border: 1px solid var(--line); padding: 1.4rem 1.6rem; background: white; transition: border-color 0.2s, transform 0.2s; }
-    .beyond-card:hover { border-color: var(--teal); transform: translateY(-2px); }
-    .beyond-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
-    .beyond-title { font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--ink); margin-bottom: 0.4rem; }
-    .beyond-desc { font-size: 0.85rem; color: var(--ink-2); line-height: 1.6; }
-    .beyond-desc .hi { color: var(--teal); font-weight: 500; }
-    .lang-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
-    .lang-item { display: flex; align-items: center; gap: 0.6rem; border: 1px solid var(--line); padding: 0.5rem 1rem; background: white; }
-    .lang-flag { font-size: 1.1rem; }
-    .lang-name { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 500; color: var(--ink); }
-    .lang-level { font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.05em; }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    /* ── PROJECTS ── */
-    .projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-    .proj-card { position: relative; height: 220px; overflow: hidden; cursor: pointer; background: var(--line); }
-    .proj-card-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; filter: brightness(0.92); }
-    .proj-card:hover .proj-card-img { transform: scale(1.05); }
-    .proj-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: var(--ink-3); letter-spacing: 0.1em; text-transform: uppercase; }
-    .proj-placeholder.p1 { background: linear-gradient(135deg, var(--teal-light), #85B7EB); }
-    .proj-placeholder.p2 { background: linear-gradient(135deg, var(--violet-lt), #F4C0D1); }
-    .proj-placeholder.p3 { background: linear-gradient(135deg, var(--teal-light), #9FE1CB); }
-    .proj-label { position: absolute; top: 12px; right: 12px; font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 7px; }
-    .proj-label.teal { background: var(--teal-light); color: var(--teal); }
-    .proj-label.violet { background: var(--violet-lt); color: var(--violet); }
-    .proj-overlay { position: absolute; inset: 0; background: rgba(15,23,42,0.82); display: flex; flex-direction: column; justify-content: flex-end; padding: 1.25rem; opacity: 0; transition: opacity 0.25s ease; }
-    .proj-card:hover .proj-overlay { opacity: 1; }
-    .proj-overlay-meta { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
-    .proj-overlay-title { font-size: 0.9rem; font-weight: 500; color: #fff; line-height: 1.4; margin-bottom: 8px; }
-    .proj-overlay-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
-    .proj-overlay-tag { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 2px 6px; border: 0.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.8); }
-    .proj-overlay-tag.teal { background: rgba(15,118,110,0.5); border-color: rgba(15,118,110,0.6); }
-    .proj-overlay-tag.violet { background: rgba(67,56,202,0.5); border-color: rgba(67,56,202,0.6); }
-    .btn-link { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: #5DCAA5; text-decoration: none; background: none; border: none; padding: 0; cursor: pointer; align-self: flex-start; }
-    .btn-link:hover { text-decoration: underline; }
-     
-    /* ── MODALS ── */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(28,35,49,0.6); backdrop-filter: blur(8px); z-index: 999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
-    .modal-overlay.active { opacity: 1; pointer-events: auto; }
-    .modal-content { background: var(--bg); width: 100%; max-width: 700px; max-height: 90vh; overflow-y: auto; position: relative; border: 1px solid var(--line); transform: translateY(20px); transition: transform 0.3s ease; }
-    .modal-overlay.active .modal-content { transform: translateY(0); }
-    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; font-size: 2rem; color: var(--ink-2); cursor: pointer; line-height: 1; z-index: 2; }
-    .modal-body { padding: 3rem 4rem; }
-    .modal-title { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 400; color: var(--ink); margin-bottom: 2rem; line-height: 1.3; }
-    .modal-text p { font-size: 1.05rem; color: var(--ink-2); line-height: 1.8; margin-bottom: 1.5rem; }
-
-    /* divider / fade */
-    .divider { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-    .divider hr { border: none; border-top: 1px solid var(--line); }
-    .fade { opacity: 0; transform: translateY(14px); transition: opacity 0.55s ease, transform 0.55s ease; }
-    .fade.visible { opacity: 1; transform: none; }
-
-    @media (max-width: 768px) {
-       { padding: 1.1rem 1.5rem; }
-      .-links { display: none; }
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .profile-frame { width: 100%; max-width: 300px; height: 380px; margin: 0 auto; }
-      .tl-item { grid-template-columns: 1fr; gap: 1.5rem; }
-      .tl-right { text-align: left; flex-direction: row; flex-wrap: wrap; align-items: center; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .beyond-grid { grid-template-columns: repeat(2, 1fr); }
-      .modal-body { padding: 2rem 1.5rem; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.4rem 4rem;background:rgba(249,248,246,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav-logo{font-family:'DM Mono',monospace;font-size:0.9rem;letter-spacing:0.1em;color:var(--ink);text-transform:uppercase;font-weight:500}
+    .nav-links{display:flex;gap:2.5rem;list-style:none}
+    .nav-links a{font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-2);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--teal)}
+    .nav-cta{font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.07em;text-transform:uppercase;color:#fff;background:var(--teal);text-decoration:none;padding:0.5rem 1.2rem;transition:background 0.2s}
+    .nav-cta:hover{background:var(--ink)}
+    #hero{min-height:100vh;display:flex;align-items:center;max-width:1000px;margin:0 auto;padding:8rem 2rem 4rem}
+    .hero-inner{display:grid;grid-template-columns:1fr 300px;gap:5rem;align-items:center;width:100%}
+    .hero-eyebrow{font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem}
+    .hero-name{font-family:'Fraunces',serif;font-size:clamp(3.5rem,6vw,5.5rem);font-weight:400;line-height:1.0;letter-spacing:-0.02em;color:var(--ink);white-space:nowrap}
+    .hero-rule{width:3rem;height:2px;background:var(--teal);margin:2rem 0}
+    .hero-headline{font-size:1.25rem;font-weight:500;color:var(--ink-2);margin-bottom:0.5rem}
+    .hero-sub{font-size:1.05rem;color:var(--ink-2);max-width:500px;line-height:1.8}
+    .hero-actions{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;align-items:center}
+    .btn-primary,.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.8rem;font-family:'DM Mono',monospace;font-size:0.85rem;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;cursor:pointer;border:none}
+    .btn-primary{background:var(--teal);color:#fff}
+    .btn-primary:hover{background:var(--ink);transform:translateY(-2px)}
+    .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink-3)}
+    .btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+    .profile-frame{width:300px;height:380px;position:relative}
+    .profile-frame::after{content:'';position:absolute;top:15px;left:15px;right:-15px;bottom:-15px;border:1px solid var(--teal);z-index:-1}
+    .profile-img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.05)}
+    .section-wrap{max-width:900px;margin:0 auto;padding:7rem 2rem}
+    .section-header{display:flex;align-items:center;gap:1.2rem;margin-bottom:4rem}
+    .section-title{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:400;color:var(--ink);letter-spacing:-0.01em}
+    .section-line{flex:1;height:1px;background:var(--line)}
+    .about-layout{max-width:800px}
+    .about-text{font-family:'DM Sans',sans-serif;font-size:1.2rem;font-weight:300;line-height:1.85;color:var(--ink-2)}
+    .about-text strong{color:var(--ink);font-weight:500}
+    .about-text .hi{color:var(--teal);font-weight:500}
+    .timeline{display:flex;flex-direction:column}
+    .tl-item{display:grid;grid-template-columns:1fr 240px;gap:3rem;padding:3rem 0;border-top:1px solid var(--line);opacity:0;transform:translateY(14px);transition:opacity 0.5s ease,transform 0.5s ease}
+    .tl-item:last-child{border-bottom:1px solid var(--line)}
+    .tl-item.visible{opacity:1;transform:none}
+    .tl-right{padding-top:0.3rem;text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:0.8rem}
+    .tl-date{font-family:'DM Mono',monospace;font-size:0.95rem;color:var(--ink-2);letter-spacing:0.05em;white-space:nowrap}
+    .tl-badge{display:inline-block;font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.35rem 0.7rem}
+    .tl-badge.work{background:var(--teal-light);color:var(--teal)}
+    .tl-badge.edu{background:var(--violet-lt);color:var(--violet)}
+    .tl-badge.award{background:#FEF3CD;color:#92600A}
+    .org-logo{width:auto;max-width:140px;object-fit:contain;display:block}
+    .org-logo-sm{height:48px}
+    .org-logo-lg{height:72px}
+    .tl-org{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;text-transform:uppercase;color:var(--teal);letter-spacing:0.05em}
+    .tl-loc{color:var(--ink-3);font-weight:400;text-transform:none;letter-spacing:0}
+    .tl-title{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;color:var(--ink);margin-bottom:1rem;line-height:1.3}
+    .tl-desc{font-size:1.05rem;color:var(--ink-2);line-height:1.75;max-width:100%;margin-bottom:1.5rem}
+    .tag{font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.05em;text-transform:uppercase;padding:0.4rem 0.8rem;background:white;color:var(--ink-2);border:1px solid var(--line)}
+    .tl-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .tag-t{background:var(--teal-light);color:var(--teal);border-color:rgba(15,118,110,0.2)}
+    .tag-v{background:var(--violet-lt);color:var(--violet);border-color:rgba(67,56,202,0.2)}
+    .skills-layout{display:flex;flex-direction:column;gap:3rem}
+    .skills-row-label{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1.6rem;display:flex;align-items:center;gap:1rem}
+    .skills-row-label::after{content:'';flex:1;height:1px;background:var(--line)}
+    .tech-strip{display:flex;flex-direction:column;gap:1.2rem}
+    .tech-row{display:flex;align-items:baseline;gap:1.5rem;flex-wrap:wrap}
+    .tech-row-label{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;color:var(--ink);min-width:130px;flex-shrink:0}
+    .tech-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+    .beyond-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+    .beyond-card{border:1px solid var(--line);padding:1.4rem 1.6rem;background:white;transition:border-color 0.2s,transform 0.2s}
+    .beyond-card:hover{border-color:var(--teal);transform:translateY(-2px)}
+    .beyond-icon{font-size:1.4rem;margin-bottom:0.8rem;display:block}
+    .beyond-title{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;color:var(--ink);margin-bottom:0.4rem}
+    .beyond-desc{font-size:0.85rem;color:var(--ink-2);line-height:1.6}
+    .beyond-desc .hi{color:var(--teal);font-weight:500}
+    .lang-row{display:flex;gap:1.2rem;flex-wrap:wrap}
+    .lang-item{display:flex;align-items:center;gap:0.6rem;border:1px solid var(--line);padding:0.5rem 1rem;background:white}
+    .lang-flag{font-size:1.1rem}
+    .lang-name{font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:500;color:var(--ink)}
+    .lang-level{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--ink-3);letter-spacing:0.05em}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .proj-card{position:relative;height:220px;overflow:hidden;cursor:pointer;background:var(--line)}
+    .proj-card-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;filter:brightness(0.92)}
+    .proj-card:hover .proj-card-img{transform:scale(1.05)}
+    .proj-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--ink-3);letter-spacing:0.1em;text-transform:uppercase}
+    .proj-placeholder.p1{background:linear-gradient(135deg,var(--teal-light),#85B7EB)}
+    .proj-placeholder.p2{background:linear-gradient(135deg,var(--violet-lt),#F4C0D1)}
+    .proj-placeholder.p3{background:linear-gradient(135deg,var(--teal-light),#9FE1CB)}
+    .proj-placeholder.p4{background:linear-gradient(135deg,#FEF3CD,#F4C0D1)}
+    .proj-placeholder.p5{background:linear-gradient(135deg,#E0E7FF,#CCFBF1)}
+    .proj-label{position:absolute;top:12px;right:12px;font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;padding:3px 7px}
+    .proj-label.teal{background:var(--teal-light);color:var(--teal)}
+    .proj-label.violet{background:var(--violet-lt);color:var(--violet)}
+    .proj-label.amber{background:#FEF3CD;color:#92600A}
+    .proj-overlay{position:absolute;inset:0;background:rgba(15,23,42,0.82);display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem;opacity:0;transition:opacity 0.25s ease}
+    .proj-card:hover .proj-overlay{opacity:1}
+    .proj-overlay-meta{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:6px}
+    .proj-overlay-title{font-size:0.9rem;font-weight:500;color:#fff;line-height:1.4;margin-bottom:8px}
+    .proj-overlay-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+    .proj-overlay-tag{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.05em;text-transform:uppercase;padding:2px 6px;border:0.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.8)}
+    .proj-overlay-tag.teal{background:rgba(15,118,110,0.5);border-color:rgba(15,118,110,0.6)}
+    .proj-overlay-tag.violet{background:rgba(67,56,202,0.5);border-color:rgba(67,56,202,0.6)}
+    .btn-link{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#5DCAA5;text-decoration:none;background:none;border:none;padding:0;cursor:pointer;align-self:flex-start}
+    .btn-link:hover{text-decoration:underline}
+    .modal-overlay{position:fixed;inset:0;background:rgba(28,35,49,0.6);backdrop-filter:blur(8px);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+    .modal-overlay.active{opacity:1;pointer-events:auto}
+    .modal-content{background:var(--bg);width:100%;max-width:700px;max-height:90vh;overflow-y:auto;position:relative;border:1px solid var(--line);transform:translateY(20px);transition:transform 0.3s ease}
+    .modal-overlay.active .modal-content{transform:translateY(0)}
+    .modal-close{position:absolute;top:1.5rem;right:1.5rem;background:none;border:none;font-size:2rem;color:var(--ink-2);cursor:pointer;line-height:1;z-index:2}
+    .modal-body{padding:3rem 4rem}
+    .modal-title{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:400;color:var(--ink);margin-bottom:2rem;line-height:1.3}
+    .modal-text p{font-size:1.05rem;color:var(--ink-2);line-height:1.8;margin-bottom:1.5rem}
+    .divider{max-width:900px;margin:0 auto;padding:0 2rem}
+    .divider hr{border:none;border-top:1px solid var(--line)}
+    .fade{opacity:0;transform:translateY(14px);transition:opacity 0.55s ease,transform 0.55s ease}
+    .fade.visible{opacity:1;transform:none}
+    @media(max-width:768px){
+      nav{padding:1.1rem 1.5rem}
+      .nav-links{display:none}
+      .hero-inner{grid-template-columns:1fr;gap:3rem}
+      .profile-frame{width:100%;max-width:300px;height:380px;margin:0 auto}
+      .tl-item{grid-template-columns:1fr;gap:1.5rem}
+      .tl-right{text-align:left;flex-direction:row;flex-wrap:wrap;align-items:center}
+      .projects-grid{grid-template-columns:1fr}
+      .beyond-grid{grid-template-columns:repeat(2,1fr)}
+      .modal-body{padding:2rem 1.5rem}
     }
   </style>
 </head>
@@ -219,6 +147,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
+  <a href="https://github.com/cecilesde" target="_blank" class="nav-cta">GitHub</a>
 </nav>
 
 <!-- HERO -->
@@ -229,9 +158,10 @@
       <h1 class="hero-name">Cécile Soudé</h1>
       <div class="hero-rule"></div>
       <p class="hero-headline">Biomedical &amp; AI Engineer</p>
-      <p class="hero-sub">Using my engineering skills to solve real clinical challenges and make a meaningful impact on healthcare.</p>
+      <p class="hero-sub">Building multi-agent AI systems at the intersection of machine learning and drug discovery — where the biology is as hard as the engineering.</p>
       <div class="hero-actions">
         <a href="#projects" class="btn-primary">View Work</a>
+        <a href="https://github.com/cecilesde" target="_blank" class="btn-ghost">GitHub</a>
         <a href="https://www.linkedin.com/in/cécile-soudé-384027218" target="_blank" class="btn-ghost">LinkedIn</a>
         <a href="mailto:cecile.soude25@imperial.ac.uk" class="btn-ghost">Email</a>
       </div>
@@ -252,8 +182,9 @@
   </div>
   <div class="about-layout fade">
     <p class="about-text">
-      <span class="hi">Sports lover</span> and MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from Centrale Lyon</strong>. I've had the opportunity to work across both academic research and a leading MedTech company, which allowed me to see the healthcare industry from different angles.<br><br>
-      My goal is to help build a future where every patient has access to the right treatment, and where technology empowers individuals to rediscover their potential.
+      MSc student in <strong>Biomedical Engineering at Imperial College London</strong>, with a MEng in <strong>General Engineering from École Centrale de Lyon</strong>. My work sits at the intersection of applied ML and drug discovery — building systems where the data is messy, the biology is complex, and getting it right actually matters for patients.<br><br>
+      From <span class="hi">single-particle tracking</span> in fluorescence microscopy at EMBL to <span class="hi">multi-agent clinical trial attrition prediction</span> powered by the Amass API, I care about building tools that accelerate scientific discovery — not just optimising benchmarks.<br><br>
+      <span class="hi">Sports lover</span>, black belt judoka, conservatory guitarist, and firm believer that maths and biology together can change medicine.
     </p>
   </div>
 </div>
@@ -265,7 +196,6 @@
     <div class="section-line"></div>
   </div>
   <div class="timeline">
-
     <div class="tl-item">
       <div>
         <p class="tl-org">Imperial College London <span class="tl-loc">— London, UK</span></p>
@@ -278,7 +208,6 @@
         <span class="tl-badge edu">MSc</span>
       </div>
     </div>
-
     <div class="tl-item">
       <div>
         <p class="tl-org">École Centrale de Lyon <span class="tl-loc">— Lyon, France</span></p>
@@ -291,20 +220,17 @@
         <span class="tl-badge edu">MEng</span>
       </div>
     </div>
-
     <div class="tl-item">
       <div>
         <p class="tl-org">Lycée Charlemagne <span class="tl-loc">— Paris, France</span></p>
-        <h3 class="tl-title">Advanced Mathematics and Physics, MPSI - MP</h3>
-        <p class="tl-desc">Preparation for national competitive entrance exams to leading French 'Grandes Écoles'. <br><br>
-          Intensive program in advanced mathematics and physics.</p>
+        <h3 class="tl-title">Advanced Mathematics and Physics, MPSI–MP</h3>
+        <p class="tl-desc">Preparation for national competitive entrance exams to leading French Grandes Écoles. Intensive program in advanced mathematics and physics.</p>
       </div>
       <div class="tl-right">
         <p class="tl-date">Sept 2019 – July 2022</p>
-        <span class="tl-badge edu">BSc</span>
+        <span class="tl-badge edu">Prépa</span>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -315,14 +241,13 @@
     <div class="section-line"></div>
   </div>
   <div class="timeline">
-
     <div class="tl-item">
       <div>
         <p class="tl-org">EMBL Australia × UNSW <span class="tl-loc">— Sydney, Australia</span></p>
-        <h3 class="tl-title">Research Engineer — Computer Vision <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> Single-Molecule Science</h3>
-        <p class="tl-desc">Built a computer vision pipeline from scratch for <span class="hi">single-particle tracking and bacterial growth kinetics analysis</span>. <br><br>
-          Used advanced image processing techniques, such as Gaussian fitting, noise filtering, subpixel refinement, to overcome low SNR in fluorescence microscopy images, achieving nanometer-scale localization accuracy.<br><br>
-        Upgraded diagnostic equipment for Parkinson's disease research by designing an integrated control system and UI.</p>
+        <h3 class="tl-title">Research Engineer — Computer Vision &amp; Single-Molecule Science</h3>
+        <p class="tl-desc">Built a computer vision pipeline from scratch for <span style="color:var(--teal);font-weight:500">single-particle tracking and bacterial growth kinetics</span>. Used Gaussian fitting, noise filtering, and subpixel refinement to overcome low SNR in fluorescence microscopy, achieving nanometer-scale localisation accuracy.<br><br>
+        Spent more time correcting photobleaching artifacts and calibrating microscope parameters than building the tracking algorithm itself — which taught me that data quality is always the first hard problem in biology.<br><br>
+        Upgraded diagnostic equipment for Parkinson's disease research with an integrated control system and UI.</p>
         <div class="tl-tags">
           <span class="tag tag-t">OpenCV</span>
           <span class="tag tag-t">Python</span>
@@ -330,36 +255,32 @@
           <span class="tag tag-t">NumPy · Pandas</span>
           <span class="tag tag-t">scikit-learn</span>
           <span class="tag">Signal Processing</span>
+          <span class="tag">Fluorescence Microscopy</span>
         </div>
       </div>
       <div class="tl-right">
-        <!-- Add embl-logo.png to your repo to show it here -->
         <img src="embl-logo.png" alt="EMBL" class="org-logo org-logo-lg" onerror="this.style.display='none'">
         <p class="tl-date">Feb – Aug 2025</p>
         <span class="tl-badge work">Research</span>
       </div>
     </div>
-
     <div class="tl-item">
       <div>
         <p class="tl-org">Stryker <span class="tl-loc">— Grenoble, France</span></p>
-        <h3 class="tl-title">R<span style="font-family:'DM Sans',sans-serif">&amp;</span>D Biomechanics Test Laboratory Intern</h3>
-        <p class="tl-desc">Acted as <span class="hi">project manager</span> for a research testing campaign on reverse shoulder prostheses.<br><br>
-        Assessed how bone substitute materials affect implant performance, with results guiding future testing methods.<br><br>
-        Led validations within a COFRAC-accredited laboratory ensuring strict compliance with FDA and EU MDR regulatory standards.</p>
+        <h3 class="tl-title">R&amp;D Biomechanics Test Laboratory Intern</h3>
+        <p class="tl-desc">Project manager for a research testing campaign on reverse shoulder prostheses. Assessed how bone substitute materials affect implant performance. Led validations within a COFRAC-accredited lab under FDA and EU MDR compliance.</p>
         <div class="tl-tags">
           <span class="tag tag-v">Project Management</span>
           <span class="tag tag-v">FDA / MDR</span>
+          <span class="tag tag-v">COFRAC</span>
         </div>
       </div>
       <div class="tl-right">
-        <!-- Add stryker-logo.png to your repo to show it here -->
         <img src="stryker.png" alt="Stryker" class="org-logo org-logo-sm" onerror="this.style.display='none'">
         <p class="tl-date">May – Dec 2024</p>
         <span class="tl-badge work">Industry</span>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -370,7 +291,6 @@
     <div class="section-line"></div>
   </div>
   <div class="skills-layout fade">
-
     <div>
       <p class="skills-row-label">Technical</p>
       <div class="tech-strip">
@@ -378,26 +298,45 @@
           <span class="tech-row-label">Programming</span>
           <div class="tech-tags">
             <span class="tag tag-t">Python</span>
+            <span class="tag tag-t">PyTorch</span>
             <span class="tag tag-t">MATLAB / Simulink</span>
             <span class="tag tag-t">OpenCV</span>
             <span class="tag tag-t">NumPy · Pandas</span>
-            <span class="tag tag-t">scikit-learn</span>
             <span class="tag">Git / GitHub</span>
           </div>
         </div>
         <div class="tech-row">
-          <span class="tech-row-label">AI <span style="font-family: 'DM Sans', sans-serif;">&amp;</span> ML</span>
+          <span class="tech-row-label">ML &amp; AI</span>
           <div class="tech-tags">
-            <span class="tag tag-t">Agentic AI</span>
+            <span class="tag tag-t">Multi-Agent Systems</span>
             <span class="tag tag-t">RAG Pipelines</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">Time-Series ML</span>
+            <span class="tag tag-t">XGBoost</span>
+            <span class="tag tag-t">scikit-learn</span>
+            <span class="tag tag-t">LLMs · Claude API</span>
             <span class="tag">Computer Vision</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <span class="tech-row-label">Drug Discovery</span>
+          <div class="tech-tags">
+            <span class="tag tag-t">RDKit</span>
+            <span class="tag tag-t">Morgan Fingerprints</span>
+            <span class="tag tag-t">ADMET Screening</span>
+            <span class="tag tag-t">Amass Platform API</span>
+            <span class="tag">ChEMBL · Tox21</span>
+          </div>
+        </div>
+        <div class="tech-row">
+          <span class="tech-row-label">Biomechanics</span>
+          <div class="tech-tags">
+            <span class="tag">OpenSim</span>
+            <span class="tag">Vicon Motion Capture</span>
+            <span class="tag">EMG · Force Plates</span>
+            <span class="tag">ezc3d</span>
           </div>
         </div>
       </div>
     </div>
-
     <div>
       <p class="skills-row-label">Languages</p>
       <div class="lang-row">
@@ -406,9 +345,8 @@
         <div class="lang-item"><span class="lang-flag">🇯🇵</span><span class="lang-name">Japanese</span><span class="lang-level">Rudiments</span></div>
       </div>
     </div>
-
     <div>
-      <p class="skills-row-label">Hobbies</p>
+      <p class="skills-row-label">Beyond the screen</p>
       <div class="beyond-grid">
         <div class="beyond-card">
           <span class="beyond-icon">🥋</span>
@@ -432,7 +370,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -442,85 +379,120 @@
     <h2 class="section-title">Projects</h2>
     <div class="section-line"></div>
   </div>
- 
   <div class="projects-grid fade">
- 
-    <!-- PROJECT 1 — THESIS -->
+
+    <!-- AttritionAI -->
     <div class="proj-card">
-      <img src="thesis.png" alt="Barefoot Running Thesis" class="proj-card-img"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="proj-placeholder p1" style="display:none;">thesis.png</div>
-      <span class="proj-label teal">MSc · 2026</span>
+      <div class="proj-placeholder p1">AttritionAI</div>
+      <span class="proj-label teal">Hackathon · 2026</span>
       <div class="proj-overlay">
-        <div class="proj-overlay-meta">Imperial College London</div>
-        <div class="proj-overlay-title">Barefoot Running as a Neuromuscular Warm-Up</div>
+        <div class="proj-overlay-meta">Anthropic × TernaryTx · Selected 100/700</div>
+        <div class="proj-overlay-title">AttritionAI — Clinical Trial Attrition Predictor</div>
         <div class="proj-overlay-tags">
-          <span class="proj-overlay-tag teal">Python</span>
-          <span class="proj-overlay-tag teal">OpenSim</span>
-          <span class="proj-overlay-tag">MATLAB</span>
-          <span class="proj-overlay-tag">Time-Series</span>
+          <span class="proj-overlay-tag teal">5-Agent Pipeline</span>
+          <span class="proj-overlay-tag teal">Amass API</span>
+          <span class="proj-overlay-tag">Claude CLI</span>
+          <span class="proj-overlay-tag">Streamlit</span>
         </div>
-        <button class="btn-link" onclick="openModal('modal-thesis')">Details →</button>
+        <button class="btn-link" onclick="openModal('modal-attrition')">Details →</button>
       </div>
     </div>
- 
-    <!-- PROJECT 2 — HACKATHON -->
+
+    <!-- ADMET -->
     <div class="proj-card">
-      <img src="hackathon.png" alt="AI Healthcare Hackathon" class="proj-card-img" style="object-position: center top"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="proj-placeholder p2" style="display:none;">hackathon.png</div>
+      <div class="proj-placeholder p3">ADMET · Tox21</div>
+      <span class="proj-label teal">Personal · 2026</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">Tox21 · 8k molecules · 12 endpoints</div>
+        <div class="proj-overlay-title">Multi-Task ADMET Toxicity Predictor</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag teal">XGBoost</span>
+          <span class="proj-overlay-tag teal">RDKit</span>
+          <span class="proj-overlay-tag">SHAP</span>
+          <span class="proj-overlay-tag">scikit-learn</span>
+        </div>
+        <a href="https://github.com/cecilesde/admet-toxicity-predictor" target="_blank" class="btn-link">GitHub →</a>
+      </div>
+    </div>
+
+    <!-- Mistral Hackathon -->
+    <div class="proj-card">
+      <img src="hackathon.png" alt="AI Healthcare Hackathon" class="proj-card-img" style="object-position:center top"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p2" style="display:none;">MRI Reports</div>
       <span class="proj-label violet">Top 8 / 23</span>
       <div class="proj-overlay">
         <div class="proj-overlay-meta">Mistral AI × GE Healthcare</div>
         <div class="proj-overlay-title">AI Tumour Reporting — Hallucination-Free MRI Reports</div>
         <div class="proj-overlay-tags">
-          <span class="proj-overlay-tag violet">Agentic AI</span>
+          <span class="proj-overlay-tag violet">Multi-Agent</span>
           <span class="proj-overlay-tag violet">RAG</span>
           <span class="proj-overlay-tag">LLMs</span>
-          <span class="proj-overlay-tag">XGBoost</span>
+          <span class="proj-overlay-tag">RECIST 1.1</span>
         </div>
         <button class="btn-link" onclick="openModal('modal-hackathon')">Details →</button>
       </div>
     </div>
- 
-    <!-- PROJECT 3 — ONCOLOGY -->
+
+    <!-- Oncology Survival -->
     <div class="proj-card">
-      <img src="km_by_stage.png" alt="Oncology Survival Analysis" class="proj-card-img" style="object-position: left center"
-        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="proj-placeholder p3" style="display:none;">km_by_stage.png</div>
+      <img src="km_by_stage.png" alt="Oncology Survival Analysis" class="proj-card-img" style="object-position:left center"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p4" style="display:none;">Survival Analysis</div>
       <span class="proj-label teal">Personal · 2026</span>
       <div class="proj-overlay">
-        <div class="proj-overlay-meta">TCGA · 566 patients</div>
-        <div class="proj-overlay-title">Oncology Survival Analysis — LUAD</div>
+        <div class="proj-overlay-meta">TCGA · 566 patients · LUAD</div>
+        <div class="proj-overlay-title">Oncology Survival Analysis — Lung Adenocarcinoma</div>
         <div class="proj-overlay-tags">
-          <span class="proj-overlay-tag teal">Survival Analysis</span>
+          <span class="proj-overlay-tag teal">Kaplan-Meier</span>
           <span class="proj-overlay-tag teal">lifelines</span>
-          <span class="proj-overlay-tag">XGBoost</span>
           <span class="proj-overlay-tag">TCGA</span>
+          <span class="proj-overlay-tag">XGBoost</span>
         </div>
         <a href="https://github.com/cecilesde/oncology-survival-analysis" target="_blank" class="btn-link">GitHub →</a>
       </div>
     </div>
- 
+
+    <!-- Thesis -->
+    <div class="proj-card">
+      <img src="thesis.png" alt="Barefoot Running Thesis" class="proj-card-img"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="proj-placeholder p5" style="display:none;">MSc Thesis</div>
+      <span class="proj-label violet">MSc · 2026</span>
+      <div class="proj-overlay">
+        <div class="proj-overlay-meta">Imperial College London</div>
+        <div class="proj-overlay-title">Barefoot Running as a Neuromuscular Warm-Up</div>
+        <div class="proj-overlay-tags">
+          <span class="proj-overlay-tag violet">OpenSim</span>
+          <span class="proj-overlay-tag violet">Vicon</span>
+          <span class="proj-overlay-tag">EMG</span>
+          <span class="proj-overlay-tag">Python</span>
+        </div>
+        <button class="btn-link" onclick="openModal('modal-thesis')">Details →</button>
+      </div>
+    </div>
+
   </div>
 </div>
- 
-<!-- MODAL THESIS -->
-<div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
+
+<!-- MODAL AttritionAI -->
+<div class="modal-overlay" id="modal-attrition" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
     <div class="modal-body">
-      <h3 class="modal-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
+      <h3 class="modal-title">AttritionAI — Clinical Trial Attrition Predictor</h3>
       <div class="modal-text">
-        <p>Investigating how a brief barefoot running session recalibrates shod running mechanics and reduces injury risk factors in recreational runners.</p>
-        <p>Multimodal Python pipeline synchronising high-frequency EMG, 3D motion capture (Vicon), and force plate kinetics, processed through OpenSim musculoskeletal models.</p>
-        <p>Key results: ×22 increase in gastrocnemius pre-activation, −7% ground contact time, +18% knee flexion at initial contact after barefoot intervention.</p>
+        <p>Selected among 700 applicants (100 participants) at the Anthropic × TernaryTx "Building an AI Scientist" Hackathon, July 2026.</p>
+        <p>Built a 5-agent LLM pipeline following the Google AI co-scientist pattern (generate → reflect → critique → synthesise → refine) that predicts clinical trial failure mode — Safety vs. Efficacy — for a given gene target and disease.</p>
+        <p>Technical details: parallel Agent 1/2 execution via concurrent.futures; structured JSON schema enforcement between agents for hallucination prevention; Adversarial Critic with confidence scoring; Targeted Refiner re-searching open questions from the Synthesizer output.</p>
+        <p>Data layer: Amass Platform REST API (TrialCore, BiomedCore, GeneCore, DrugCore), single-fetch upfront architecture. Stack: Claude Code CLI, Python, Streamlit.</p>
+        <p><a href="https://github.com/cecilesde/target-discovery-agents" target="_blank" style="color:var(--teal)">github.com/cecilesde/target-discovery-agents →</a></p>
       </div>
     </div>
   </div>
 </div>
- 
-<!-- MODAL HACKATHON -->
+
+<!-- MODAL Hackathon -->
 <div class="modal-overlay" id="modal-hackathon" onclick="closeModal(event)">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button class="modal-close" onclick="closeModal(event)">&times;</button>
@@ -528,34 +500,41 @@
       <h3 class="modal-title">AI Tumour Reporting · Mistral AI × GE Healthcare</h3>
       <div class="modal-text">
         <p>48-hour hackathon. Multi-agent AI workflow helping radiologists generate hallucination-free MRI tumour reports grounded on RECIST 1.1 oncology guidelines.</p>
-        <p>RAG pipeline forcing structured JSON output to guarantee zero hallucinations in a clinical setting. Predictive triage model using XGBoost and Learning-to-Rank to optimise patient flow.</p>
-        <p>Top 8 out of 23 teams.</p>
+        <p>RAG pipeline with long/short-term memory architecture and structured JSON output validation to guarantee zero hallucinations in a clinical setting. Predictive triage model using XGBoost and Learning-to-Rank to optimise patient flow.</p>
+        <p>Top 8 out of 23 teams. Pitched to a jury of healthcare executives.</p>
       </div>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer style="padding: 2.5rem 4rem; text-align: center; color: var(--ink-3); font-family: 'DM Mono', monospace; font-size: 0.85rem;">
+<!-- MODAL Thesis -->
+<div class="modal-overlay" id="modal-thesis" onclick="closeModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <button class="modal-close" onclick="closeModal(event)">&times;</button>
+    <div class="modal-body">
+      <h3 class="modal-title">Barefoot Running as a Neuromuscular Warm-Up</h3>
+      <div class="modal-text">
+        <p>MSc thesis investigating how a brief barefoot running session recalibrates shod running mechanics and reduces injury risk factors in recreational runners.</p>
+        <p>Multimodal Python pipeline synchronising high-frequency EMG (2400 Hz), 3D motion capture (Vicon), and force plate kinetics, processed through OpenSim musculoskeletal models.</p>
+        <p>Key results: ×22 increase in gastrocnemius pre-activation, −7% ground contact time, +18% knee flexion at initial contact after barefoot intervention.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer style="padding:2.5rem 4rem;text-align:center;color:var(--ink-3);font-family:'DM Mono',monospace;font-size:0.85rem;">
   © 2026 Cécile Soudé · All rights reserved.
 </footer>
 
 <script>
-  function openModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
-  function closeModal(e) { document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active')); document.body.style.overflow = 'auto'; }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.tl-item, .fade').forEach(el => io.observe(el));
-
-  const sections = document.querySelectorAll('[id]');
-  const links = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
-    links.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--teal)' : ''; });
-  });
+  function openModal(id){document.getElementById(id).classList.add('active');document.body.style.overflow='hidden'}
+  function closeModal(e){document.querySelectorAll('.modal-overlay').forEach(m=>m.classList.remove('active'));document.body.style.overflow='auto'}
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:0.08});
+  document.querySelectorAll('.tl-item, .fade').forEach(el=>io.observe(el));
+  const sections=document.querySelectorAll('[id]');
+  const links=document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-140)cur=s.id});links.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--teal)':''})});
 </script>
+</body>
 </html>
